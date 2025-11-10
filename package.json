@@ -1,7 +1,7 @@
 {
   "name": "raecellann",
   "version": "1.0.0",
-  "description": "A single-page application built with React and Vite.",
+  "description": "A single-page application built with React and Vite. Updated for Vercel deployment.",
   "main": "src/main.jsx",
   "scripts": {
     "dev": "vite",
