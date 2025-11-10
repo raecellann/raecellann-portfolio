@@ -4,8 +4,8 @@
   "description": "A single-page application built with React and Vite. Updated for Vercel deployment.",
   "main": "src/main.jsx",
   "engines": {
-    "node": "18.x"
-  },
+    "node": "22.x"
+  }
   "scripts": {
     "dev": "vite",
     "build": "npx vite build",
