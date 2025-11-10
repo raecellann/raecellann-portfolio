@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "installCommand": "npm install",
   "builds": [
     {
       "src": "package.json",
@@ -12,11 +11,10 @@
   ],
   "routes": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "handle": "filesystem"
     },
     {
-      "src": "/(.*)",
+      "src": "/.*",
       "dest": "/index.html"
     }
   ]
