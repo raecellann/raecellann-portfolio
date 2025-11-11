@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/Home.css";
 import Switch from "../components/button";
 import Skill from "../components/Skill";
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaEnvelope, FaFilePdf } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedinIn, FaEnvelope, FaFilePdf, FaBars } from "react-icons/fa";
 import darkSvg from "../assets/HELLO! I’M-darkmode.svg";
 import lightSvg from "../assets/HELLO! I’M-lightmode.svg";
 import galvezDarkSvg from "../assets/GALVEZ-darkmode.svg";
@@ -59,6 +59,7 @@ const Home = () => {
   );
   const [modalImages, setModalImages] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleTheme = () => {
     const newTheme = !darkTheme;
@@ -113,6 +114,23 @@ const Home = () => {
   return (
     <div className={`home-container ${darkTheme ? "light" : "dark"}`}>
       <div className="horizontal-divider"></div>
+      <div className="mobile-header">
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <FaBars />
+        </button>
+        <div className="mobile-switch">
+          <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
+        </div>
+      </div>
+      {menuOpen && (
+        <div className="mobile-menu">
+          <nav className="mobile-nav">
+            <a href="#about" onClick={() => setMenuOpen(false)}>About Me</a>
+            <a href="#works" onClick={() => setMenuOpen(false)}>Works</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          </nav>
+        </div>
+      )}
       <main className="main-content">
         <div className="left-section">
           <h3 className="intro">
@@ -136,6 +154,7 @@ const Home = () => {
               className="lastname-image"
             />
           </h2>
+          <img src={profilePic} alt="Profile" className="skills-photo" />
           <p className="subtitle">
             A <span className="highlight">UI/UX Designer</span> and{" "}
             <span className="highlight">Web Developer</span>
@@ -154,9 +173,9 @@ const Home = () => {
           </nav>
         </div>
         <div className="right-section">
-        <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
-
-        {/* ✅ Soft Skills Section */}
+          <div className="desktop-switch">
+            <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
+          </div>
         <section className="soft-skills">
           <div className="skills-left">
             <h3>Soft Skills</h3>
@@ -171,15 +190,16 @@ const Home = () => {
             </div>
           </div>
 
-          {/* ✅ Your right-side image */}
           <div className="skills-right">
-          <img src={profilePic} alt="Profile" className="skills-photo" />
+            <img src={profilePic} alt="Profile" className="skills-photo" />
           </div>
         </section>
-        <p className="skills-description">
-          Passionate about collaboration and innovation. I enjoy creating meaningful
-          digital experiences that balance creativity and functionality.
-        </p>
+        <div className="description-container">
+          <p className="skills-description">
+            Passionate about collaboration and innovation. I enjoy creating meaningful
+            digital experiences that balance creativity and functionality.
+          </p>
+        </div>
 
         {/* Works Section */}
         <section id="works" className="works-section">
