@@ -12,6 +12,9 @@ import raecelldarkSvg from "../assets/RAECELL-ANN-darkmode.svg";
 import profilePic from "../assets/picture.png"; // adjust path if needed
 import minicellImage from "../assets/works/Minicell.png";
 import eightEastImage from "../assets/works/8EAST.png";
+import CommuniqueImage from "../assets/works/Communique.jpg";
+import LuckymotoImage from "../assets/works/Lucky-moto.png";
+
 
 const Home = () => {
   const [darkTheme, setDarkTheme] = useState(
@@ -25,7 +28,22 @@ const Home = () => {
     localStorage.setItem("theme", newTheme ? "dark" : "light");
   };
 
+  const handleMouseMove = (e) => {
+    const img = e.currentTarget;
+    const rect = img.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / centerY * -5; // Reduced sensitivity
+    const rotateY = (x - centerX) / centerX * 5;
+    img.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  };
 
+  const handleMouseLeave = (e) => {
+    const img = e.currentTarget;
+    img.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
+  };
 
   useEffect(() => {
     document.body.classList.toggle("light-mode", !darkTheme);
@@ -113,6 +131,8 @@ const Home = () => {
                 src={minicellImage}
                 alt="Minicell Project Preview"
                 className="works-image"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
               />
               <h4 className="project-title">Minicell</h4>
               <p className="project-subtitle">
@@ -127,10 +147,12 @@ const Home = () => {
                 src={eightEastImage}
                 alt="8EAST Project Preview"
                 className="works-image"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
               />
-              <h4 className="project-title">8EAST</h4>
+              <h4 className="project-title">8Con - East</h4>
               <p className="project-subtitle">
-                Restaurant Website
+                8Con Enrollment System
               </p>
             </div>
           </div>
@@ -138,13 +160,15 @@ const Home = () => {
           <div className="works-card">
             <div className="works-image-container">
               <img
-                src={minicellImage}
+                src={CommuniqueImage}
                 alt="Project 3 Preview"
                 className="works-image"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
               />
-              <h4 className="project-title">Project 3</h4>
+              <h4 className="project-title">Communiqué</h4>
               <p className="project-subtitle">
-                Web Application
+                Social Media Website
               </p>
             </div>
           </div>
@@ -152,69 +176,15 @@ const Home = () => {
           <div className="works-card">
             <div className="works-image-container">
               <img
-                src={eightEastImage}
+                src={LuckymotoImage}
                 alt="Project 4 Preview"
                 className="works-image"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
               />
-              <h4 className="project-title">Project 4</h4>
+              <h4 className="project-title">Lucky Mo To</h4>
               <p className="project-subtitle">
-                Portfolio Website
-              </p>
-            </div>
-          </div>
-
-          <div className="works-card">
-            <div className="works-image-container">
-              <img
-                src={minicellImage}
-                alt="Project 5 Preview"
-                className="works-image"
-              />
-              <h4 className="project-title">Project 5</h4>
-              <p className="project-subtitle">
-                E-Commerce Platform
-              </p>
-            </div>
-          </div>
-
-          <div className="works-card">
-            <div className="works-image-container">
-              <img
-                src={eightEastImage}
-                alt="Project 6 Preview"
-                className="works-image"
-              />
-              <h4 className="project-title">Project 6</h4>
-              <p className="project-subtitle">
-                Blog Website
-              </p>
-            </div>
-          </div>
-
-          <div className="works-card">
-            <div className="works-image-container">
-              <img
-                src={minicellImage}
-                alt="Project 7 Preview"
-                className="works-image"
-              />
-              <h4 className="project-title">Project 7</h4>
-              <p className="project-subtitle">
-                Landing Page
-              </p>
-            </div>
-          </div>
-
-          <div className="works-card">
-            <div className="works-image-container">
-              <img
-                src={eightEastImage}
-                alt="Project 8 Preview"
-                className="works-image"
-              />
-              <h4 className="project-title">Project 8</h4>
-              <p className="project-subtitle">
-                Dashboard Application
+                Minute Lotto Website
               </p>
             </div>
           </div>

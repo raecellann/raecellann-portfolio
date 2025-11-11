@@ -470,6 +470,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  perspective: 500px;
 }
 
 .works-image {
