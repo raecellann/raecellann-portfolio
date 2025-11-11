@@ -1,3 +1,0 @@
-- [ ] Add 2-3 more work projects below the existing 4, with smaller image sizes.
-- [ ] Make the theme switch fixed on screen during scrolling.
-- [ ] Update CSS for smaller works cards and fixed switch positioning.
