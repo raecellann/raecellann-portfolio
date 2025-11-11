@@ -14,12 +14,51 @@ import minicellImage from "../assets/works/Minicell.png";
 import eightEastImage from "../assets/works/8EAST.png";
 import CommuniqueImage from "../assets/works/Communique.jpg";
 import LuckymotoImage from "../assets/works/Lucky-moto.png";
+import InfonvaImage from "../assets/works/infonova.png";
+import ImmaculearnImage from "../assets/works/Immaculearn.png";
+import Immaculearn1 from "../assets/works/Immaculearn-1.png";
+import Immaculearn2 from "../assets/works/Immaculearn-2.png";
+import Immaculearn3 from "../assets/works/Immaculearn-3.png";
 
+const projects = [
+  {
+    title: "Minicell",
+    subtitle: "E-Commerce Clothing Line Website",
+    images: [minicellImage]
+  },
+  {
+    title: "8Con - East",
+    subtitle: "8Con Enrollment System",
+    images: [eightEastImage]
+  },
+  {
+    title: "Communiqué",
+    subtitle: "Social Media Website",
+    images: [CommuniqueImage]
+  },
+  {
+    title: "Lucky Mo To",
+    subtitle: "Minute Lotto Website",
+    images: [LuckymotoImage]
+  },
+  {
+    title: "Infonova",
+    subtitle: "Search Engine for Articles",
+    images: [InfonvaImage]
+  },
+  {
+    title: "ImmacuLearn",
+    subtitle: "Online Collaborative Application",
+    images: [ImmaculearnImage, Immaculearn1, Immaculearn2, Immaculearn3]
+  }
+];
 
 const Home = () => {
   const [darkTheme, setDarkTheme] = useState(
     () => localStorage.getItem("theme") !== "light"
   );
+  const [modalImages, setModalImages] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const toggleTheme = () => {
     const newTheme = !darkTheme;
@@ -43,6 +82,28 @@ const Home = () => {
   const handleMouseLeave = (e) => {
     const img = e.currentTarget;
     img.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
+  };
+
+  const handleImageClick = (images, index = 0) => {
+    setModalImages(images);
+    setCurrentImageIndex(index);
+  };
+
+  const closeModal = () => {
+    setModalImages(null);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === modalImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? modalImages.length - 1 : prevIndex - 1
+    );
   };
 
   useEffect(() => {
@@ -133,6 +194,7 @@ const Home = () => {
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => handleImageClick(projects[0].images)}
               />
               <h4 className="project-title">Minicell</h4>
               <p className="project-subtitle">
@@ -149,6 +211,7 @@ const Home = () => {
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => handleImageClick(projects[1].images)}
               />
               <h4 className="project-title">8Con - East</h4>
               <p className="project-subtitle">
@@ -165,6 +228,7 @@ const Home = () => {
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => handleImageClick(projects[2].images)}
               />
               <h4 className="project-title">Communiqué</h4>
               <p className="project-subtitle">
@@ -181,6 +245,7 @@ const Home = () => {
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => handleImageClick(projects[3].images)}
               />
               <h4 className="project-title">Lucky Mo To</h4>
               <p className="project-subtitle">
@@ -190,9 +255,78 @@ const Home = () => {
           </div>
         </section>
 
+        <h5 className="works-title2">Other Works</h5>
+        <section id="works2" className="works_small_card">
+
+        <div className="works-card2">
+            <div className="works-image-container2">
+              <img
+                src={InfonvaImage}
+                alt="Minicell Project Preview"
+                className="works-image"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleImageClick(projects[4].images)}
+              />
+              <h4 className="project-title1">Infonova</h4>
+              <p className="project-subtitle1">
+                Search Engine for Articles
+              </p>
+            </div>
+          </div>
+          <div className="works-card2">
+            <div className="works-image-container2">
+              <img
+                src={ImmaculearnImage}
+                alt="8EAST Project Preview"
+                className="works-image"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleImageClick(projects[5].images)}
+              />
+              <h4 className="project-title1">ImmacuLearn</h4>
+              <p className="project-subtitle1">
+                Online Collaborative Application
+              </p>
+            </div>
+          </div>
+        </section>
+
 
       </div>
       </main>
+
+      {/* Modal for displaying enlarged image */}
+      {modalImages && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content">
+            <img src={modalImages[currentImageIndex]} alt="Enlarged Project Preview" className="modal-image" />
+            <button className="modal-close" onClick={closeModal}>×</button>
+            {modalImages.length > 1 && (
+              <>
+                <button
+                  className="modal-prev"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    prevImage();
+                  }}
+                >
+                  &lt;
+                </button>
+
+                <button
+                className="modal-next"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
+              >
+                &gt;
+              </button>              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
