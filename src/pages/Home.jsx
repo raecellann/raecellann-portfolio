@@ -13,7 +13,7 @@ import profilePic from "../assets/picture.png"; // adjust path if needed
 import minicellImage from "../assets/works/Minicell.png";
 import eightEastImage from "../assets/works/8EAST.png";
 import CommuniqueImage from "../assets/works/Communique.jpg";
-import LuckymotoImage from "../assets/works/Lucky-moto.png";
+import LuckymotoImage from "../assets/works/lucky-moto.png";
 import InfonvaImage from "../assets/works/infonova.png";
 import ImmaculearnImage from "../assets/works/Immaculearn.png";
 import Immaculearn1 from "../assets/works/Immaculearn-1.png";
