@@ -11,6 +11,8 @@ import raecellLightSvg from "../assets/RAECELL-ANN-lightmode.svg";
 import raecelldarkSvg from "../assets/RAECELL-ANN-darkmode.svg";
 import profilePic from "../assets/picture.png"; // adjust path if needed
 import minicellImage from "../assets/works/Minicell.png";
+import minicell2Image from "../assets/works/Minicell2.png";
+import minicell3Image from "../assets/works/Minicell3.png";
 import eightEastImage from "../assets/works/8EAST.png";
 import CommuniqueImage from "../assets/works/Communique.jpg";
 import LuckymotoImage from "../assets/works/lucky-moto.png";
@@ -24,7 +26,7 @@ const projects = [
   {
     title: "Minicell",
     subtitle: "E-Commerce Clothing Line Website",
-    images: [minicellImage]
+    images: [minicellImage, minicell2Image, minicell3Image]
   },
   {
     title: "8Con - East",
@@ -59,7 +61,26 @@ const Home = () => {
   );
   const [modalImages, setModalImages] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
+
+  // Auto-slideshow effect
+  useEffect(() => {
+    if (!modalImages || modalImages.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      if (!isTransitioning) {
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setCurrentImageIndex((prev) => (prev + 1) % modalImages.length);
+          setIsTransitioning(false);
+        }, 300);
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [modalImages, isTransitioning]);
 
   const toggleTheme = () => {
     const newTheme = !darkTheme;
@@ -171,6 +192,26 @@ const Home = () => {
             <a href="mailto:example@email.com"><FaEnvelope /></a>
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
           </nav>
+          
+          {/* Personal Information Section */}
+          <div className="personal-info">
+            <div className="info-item">
+              <span className="info-label">Location</span>
+              <span className="info-value">Philippines</span>
+            </div>
+            <div className="info-item">
+              <span className="info-label">Status</span>
+              <span className="info-value">Available for work</span>
+            </div>
+            <div className="info-item">
+              <span className="info-label">Experience</span>
+              <span className="info-value">Internship & School Projects</span>
+            </div>
+            <div className="info-item">
+              <span className="info-label">Specialty</span>
+              <span className="info-value">UI/UX Design</span>
+            </div>
+          </div>
         </div>
         <div className="right-section">
           <div className="desktop-switch">
@@ -196,8 +237,7 @@ const Home = () => {
         </section>
         <div className="description-container">
           <p className="skills-description">
-            Passionate about collaboration and innovation. I enjoy creating meaningful
-            digital experiences that balance creativity and functionality.
+            Computer Science graduate driven by collaboration and innovation, focused on developing meaningful digital solutions that balance functionality, efficiency, and user experience while continuously exploring new technologies.
           </p>
         </div>
 
@@ -320,7 +360,11 @@ const Home = () => {
       {modalImages && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content">
-            <img src={modalImages[currentImageIndex]} alt="Enlarged Project Preview" className="modal-image" />
+            <img 
+              src={modalImages[currentImageIndex]} 
+              alt="Enlarged Project Preview" 
+              className={`modal-image ${isTransitioning ? 'transitioning' : ''}`} 
+            />
             <button className="modal-close" onClick={closeModal}>×</button>
             {modalImages.length > 1 && (
               <>
