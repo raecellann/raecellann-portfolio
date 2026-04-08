@@ -26,6 +26,8 @@ import ImmaculearnImage from "../assets/works/Immaculearn.png";
 import Immaculearn1 from "../assets/works/Immaculearn-1.png";
 import Immaculearn2 from "../assets/works/Immaculearn-2.png";
 import Immaculearn3 from "../assets/works/Immaculearn-3.png";
+import CollabCanvasImage from "../assets/works/Collab-canvas.png";
+import CollabCanvas1Image from "../assets/works/Collab-canvas1.png";
 
 const projects = [
   {
@@ -61,6 +63,12 @@ const projects = [
     title: "ImmacuLearn",
     subtitle: "Online Collaborative Application",
     images: [ImmaculearnImage, Immaculearn1, Immaculearn2, Immaculearn3]
+  },
+  {
+    title: "Collaborative Canvas",
+    subtitle: "Real-time Drawing Application",
+    images: [CollabCanvasImage, CollabCanvas1Image],
+    github: "https://github.com/raecellann/Collaborative-Canvas"
   }
 ];
 
@@ -315,7 +323,7 @@ const Home = () => {
             <a href="https://github.com/raecellann" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
             <a href="https://www.linkedin.com/in/raecell-ann-galvez-03b435359/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
             <a href="mailto:raecellanndomingogalvez@gmail.com"><FaEnvelope /></a>
-            <a href="/RAECELL ANN GALVEZ - RESUME.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
+            <a href="/RAECELL ANN GALVEZ - RESUME.pdf?v=20250409" target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
           </nav>
           
           {/* Personal Information Section */}
@@ -342,34 +350,37 @@ const Home = () => {
           <div className="desktop-switch">
             <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
           </div>
-        <section className="soft-skills">
-          <div className="skills-left">
-            <h3>Soft Skills</h3>
-            <div className="skills-container">
-              <Skill text="#Creative" filled={true} />
-              <Skill text="#Teamwork" filled={false} />
-              <Skill text="#Adaptability" filled={false} />
-              <Skill text="#Communication" filled={true} />
-              <Skill text="#Attention to Detail" filled={true} />
-              <Skill text="#Flexibility" filled={false} />
-              <Skill text="#Time-Management" filled={true} />
+          <section className="soft-skills">
+            <div className="skills-left">
+              <h3>Soft Skills</h3>
+              <div className="skills-container">
+                <Skill text="#Creative" filled={true} />
+                <Skill text="#Teamwork" filled={false} />
+                <Skill text="#Adaptability" filled={false} />
+                <Skill text="#Communication" filled={true} />
+                <Skill text="#Attention to Detail" filled={true} />
+                <Skill text="#Flexibility" filled={false} />
+                <Skill text="#Time-Management" filled={true} />
+              </div>
             </div>
+
+            <div className="skills-right">
+              <img src={profilePic} alt="Profile" className="skills-photo" />
+            </div>
+          </section>
+          <div className="description-container">
+            <p className="skills-description">
+              I'm a Computer Science graduate passionate about building clean, user-friendly digital experiences. I specialize in front-end development and UI/UX design, turning ideas into functional and visually engaging web applications using modern tools like React, JavaScript, and Figma.
+            </p>
+            <p className="skills-description">
+              I enjoy combining creativity with problem-solving—whether it's developing responsive websites, designing intuitive interfaces, or using data and AI tools to improve efficiency. I'm always exploring new technologies and continuously refining my skills to create meaningful and impactful digital solutions.
+            </p>
           </div>
 
-          <div className="skills-right">
-            <img src={profilePic} alt="Profile" className="skills-photo" />
-          </div>
-        </section>
-        <div className="description-container">
-          <p className="skills-description">
-            Computer Science graduate driven by collaboration and innovation, focused on developing meaningful digital solutions that balance functionality, efficiency, and user experience while continuously exploring new technologies.
-          </p>
-        </div>
-
-        {/* Works Section */}
-        <section id="works" className="works-section">
-          <h3 className="works-title">Works</h3>
-          <div className="works-divider"></div>
+          {/* Works Section */}
+          <section id="works" className="works-section">
+            <h3 className="works-title">Works</h3>
+            <div className="works-divider"></div>
 
           <div className="works-card">
             <div className="works-image-container">
@@ -488,8 +499,7 @@ const Home = () => {
 
         <h5 className="works-title2">Other Works</h5>
         <section id="works2" className="works_small_card">
-
-        <div className="works-card2">
+          <div className="works-card2">
             <div className="works-image-container2">
               <img
                 src={InfonvaImage}
@@ -518,6 +528,48 @@ const Home = () => {
               <h4 className="project-title1">ImmacuLearn</h4>
               <p className="project-subtitle1">
                 Online Collaborative Application
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="works3" className="works_small_card">
+          <div className="works-card2">
+            <div className="works-image-container2">
+              <img
+                src={CollabCanvasImage}
+                alt="Collaborative Canvas Project Preview"
+                className="works-image"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleImageClick(projects[6].images)}
+              />
+              <div className="project-links">
+                {projects[6].github ? (
+                  <a 
+                    href={projects[6].github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-title-link"
+                  >
+                    <h4 className="project-title1">Collaborative Canvas</h4>
+                  </a>
+                ) : (
+                  <h4 className="project-title1">Collaborative Canvas</h4>
+                )}
+                {projects[6].github && (
+                  <a 
+                    href={projects[6].github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="github-link"
+                  >
+                    <FaGithub />
+                  </a>
+                )}
+              </div>
+              <p className="project-subtitle1">
+                Real-time Drawing Application
               </p>
             </div>
           </div>
