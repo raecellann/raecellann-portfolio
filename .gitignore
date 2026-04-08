@@ -10,3 +10,7 @@ public/RAECELL ANN GALVEZ - RESUME.pdf
 service_*
 template_*
 tx926UcL2Oyd1ZYFo
+
+# Node modules - exclude from GitHub
+node_modules/
+package-lock.json
