@@ -586,6 +586,33 @@ body {
   color: inherit;
 }
 
+.project-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-title-link:hover {
+  color: #9c27b0;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.github-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.github-link:hover {
+  color: #9c27b0;
+}
+
 .project-subtitle {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
@@ -685,11 +712,11 @@ body {
 
 .modal-close {
   position: absolute;
-  top: -50px; /* Adjust position to account for padding */
-  right: -50px; /* Adjust position */
-  background: rgba(255, 255, 255, 0.2);
+  top: 10px;
+  right: 10px;
+  background: rgba(156, 39, 176, 0.2);
   border: none;
-  color: white;
+  color: #9c27b0;
   font-size: 2rem;
   width: 40px;
   height: 40px;
@@ -699,19 +726,20 @@ body {
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease;
+  z-index: 1001;
 }
 
 .modal-close:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(156, 39, 176, 0.4);
 }
 
 .modal-prev, .modal-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(156, 39, 176, 0.2);
   border: none;
-  color: white;
+  color: #9c27b0;
   font-size: 2rem;
   width: 50px;
   height: 50px;
@@ -732,7 +760,7 @@ body {
 }
 
 .modal-prev:hover, .modal-next:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(156, 39, 176, 0.4);
 }
 
 /* Responsive adjustments for modal */

@@ -14,7 +14,11 @@ import minicellImage from "../assets/works/Minicell.png";
 import minicell2Image from "../assets/works/Minicell2.png";
 import minicell3Image from "../assets/works/Minicell3.png";
 import eightEastImage from "../assets/works/8EAST.png";
+import eightEast1Image from "../assets/works/8EAST1.png";
+import eightEast2Image from "../assets/works/8EAST2.png";
 import CommuniqueImage from "../assets/works/Communique.jpg";
+import Communique1Image from "../assets/works/Communique1.png";
+import Communique2Image from "../assets/works/Communique2.png";
 import LuckymotoImage from "../assets/works/lucky-moto.png";
 import InfonvaImage from "../assets/works/infonova.png";
 import ImmaculearnImage from "../assets/works/Immaculearn.png";
@@ -26,17 +30,21 @@ const projects = [
   {
     title: "Minicell",
     subtitle: "E-Commerce Clothing Line Website",
-    images: [minicellImage, minicell2Image, minicell3Image]
+    images: [minicellImage, minicell2Image, minicell3Image],
+    link: "https://www.figma.com/proto/wLFVGNobTR4Opc2jWdT6vQ/SOFTENG-ECOMMERCE?node-id=0-1&t=3aUGIveq2vDZiEhy-1",
+    github: "https://github.com/raecellann/minicell"
   },
   {
     title: "8Con - East",
     subtitle: "8Con Enrollment System",
-    images: [eightEastImage]
+    images: [eightEastImage, eightEast1Image, eightEast2Image]
   },
   {
     title: "Communiqué",
     subtitle: "Social Media Website",
-    images: [CommuniqueImage]
+    images: [CommuniqueImage, Communique1Image, Communique2Image],
+    link: "https://www.figma.com/proto/P8dPwhOEj1HgYpbAjT1P2M/COMMUNIQUE?node-id=0-1&t=BEEumZfzwUHuxOIi-1",
+    github: "https://github.com/raecellann/Communique"
   },
   {
     title: "Lucky Mo To",
@@ -65,23 +73,7 @@ const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
 
-  // Auto-slideshow effect
-  useEffect(() => {
-    if (!modalImages || modalImages.length <= 1) return;
-    
-    const interval = setInterval(() => {
-      if (!isTransitioning) {
-        setIsTransitioning(true);
-        setTimeout(() => {
-          setCurrentImageIndex((prev) => (prev + 1) % modalImages.length);
-          setIsTransitioning(false);
-        }, 300);
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [modalImages, isTransitioning]);
-
+  
   const toggleTheme = () => {
     const newTheme = !darkTheme;
     setDarkTheme(newTheme);
@@ -256,7 +248,30 @@ const Home = () => {
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleImageClick(projects[0].images)}
               />
-              <h4 className="project-title">Minicell</h4>
+              <div className="project-links">
+                {projects[0].link ? (
+                  <a 
+                    href={projects[0].link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-title-link"
+                  >
+                    <h4 className="project-title">Minicell</h4>
+                  </a>
+                ) : (
+                  <h4 className="project-title">Minicell</h4>
+                )}
+                {projects[0].github && (
+                  <a 
+                    href={projects[0].github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="github-link"
+                  >
+                    <FaGithub />
+                  </a>
+                )}
+              </div>
               <p className="project-subtitle">
                 E-Commerce Clothing Line Website
               </p>
@@ -290,7 +305,30 @@ const Home = () => {
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleImageClick(projects[2].images)}
               />
-              <h4 className="project-title">Communiqué</h4>
+              <div className="project-links">
+                {projects[2].link ? (
+                  <a 
+                    href={projects[2].link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-title-link"
+                  >
+                    <h4 className="project-title">Communiqué</h4>
+                  </a>
+                ) : (
+                  <h4 className="project-title">Communiqué</h4>
+                )}
+                {projects[2].github && (
+                  <a 
+                    href={projects[2].github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="github-link"
+                  >
+                    <FaGithub />
+                  </a>
+                )}
+              </div>
               <p className="project-subtitle">
                 Social Media Website
               </p>
