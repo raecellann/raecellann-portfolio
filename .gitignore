@@ -1,1 +1,12 @@
 .vercel
+
+# Resume files - exclude from GitHub
+*.pdf
+RAECELL ANN GALVEZ - RESUME.pdf
+src/resume/
+public/RAECELL ANN GALVEZ - RESUME.pdf
+
+# EmailJS credentials - exclude from GitHub for security
+service_*
+template_*
+tx926UcL2Oyd1ZYFo

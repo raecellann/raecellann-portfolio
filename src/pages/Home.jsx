@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/Home.css";
 import Switch from "../components/button";
 import Skill from "../components/Skill";
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaEnvelope, FaFilePdf, FaBars } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedinIn, FaEnvelope, FaFilePdf, FaBars, FaArrowUp } from "react-icons/fa";
+import emailjs from '@emailjs/browser';
 import darkSvg from "../assets/HELLO! I’M-darkmode.svg";
 import lightSvg from "../assets/HELLO! I’M-lightmode.svg";
 import galvezDarkSvg from "../assets/GALVEZ-darkmode.svg";
@@ -72,6 +73,17 @@ const Home = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const aboutRef = useRef(null);
+  
+  // Email form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState('');
 
   
   const toggleTheme = () => {
@@ -124,6 +136,127 @@ const Home = () => {
     document.body.classList.toggle("light-mode", !darkTheme);
   }, [darkTheme]);
 
+  // Handle scroll to show/hide back to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  // Scroll to About section
+  const scrollToAbout = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  };
+
+  // Form handling functions
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const validateForm = () => {
+    const { name, email, subject, message } = formData;
+    
+    if (!name.trim()) {
+      setFormStatus('Please enter your name');
+      return false;
+    }
+    
+    if (!email.trim()) {
+      setFormStatus('Please enter your email');
+      return false;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setFormStatus('Please enter a valid email address');
+      return false;
+    }
+    
+    if (!subject.trim()) {
+      setFormStatus('Please enter a subject');
+      return false;
+    }
+    
+    if (!message.trim()) {
+      setFormStatus('Please enter your message');
+      return false;
+    }
+    
+    if (message.trim().length < 10) {
+      setFormStatus('Message must be at least 10 characters long');
+      return false;
+    }
+    
+    return true;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      setTimeout(() => setFormStatus(''), 3000);
+      return;
+    }
+    
+    setFormStatus('Sending...');
+    
+    try {
+      // EmailJS configuration - you'll need to replace these with your actual EmailJS credentials
+      const serviceId = 'service_9rvguc2'; // Your EmailJS service ID
+      const templateId = 'template_79mdhza'; // Your EmailJS template ID
+      const publicKey = 'tx926UcL2Oyd1ZYFo'; // Your EmailJS public key
+      
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'raecellanndomingogalvez@gmail.com' // Your actual email address
+      };
+      
+      // Send email using EmailJS
+      const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      if (response.status === 200) {
+        setFormStatus('Message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to send email');
+      }
+      
+      // Clear status after 3 seconds
+      setTimeout(() => setFormStatus(''), 3000);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      // Fallback to mailto link if EmailJS fails
+      setFormStatus('Opening email client...');
+      const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+      window.location.href = mailtoLink;
+      
+      setTimeout(() => setFormStatus(''), 3000);
+    }
+  };
+
   return (
     <div className={`home-container ${darkTheme ? "light" : "dark"}`}>
       <div className="horizontal-divider"></div>
@@ -138,7 +271,7 @@ const Home = () => {
       {menuOpen && (
         <div className="mobile-menu">
           <nav className="mobile-nav">
-            <a href="#about" onClick={() => setMenuOpen(false)}>About Me</a>
+            <a href="#about" onClick={(e) => { scrollToAbout(e); setMenuOpen(false); }}>About Me</a>
             <a href="#works" onClick={() => setMenuOpen(false)}>Works</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           </nav>
@@ -146,7 +279,7 @@ const Home = () => {
       )}
       <main className="main-content">
         <div className="left-section">
-          <h3 className="intro">
+          <h3 ref={aboutRef} className="intro">
             <img
               src={darkTheme ? lightSvg : darkSvg}
               alt="HELLO! I'M"
@@ -173,20 +306,20 @@ const Home = () => {
             <span className="highlight">Web Developer</span>
           </p>
           <nav className="nav-links">
-            <a href="#about">About Me</a>
+            <a href="#about" onClick={scrollToAbout}>About Me</a>
             <a href="#works">Works</a>
             <a href="#contact">Contact</a>
           </nav>
           <nav className="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-            <a href="mailto:example@email.com"><FaEnvelope /></a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
+            <a href="https://www.facebook.com/Yeshiii.amiii/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+            <a href="https://github.com/raecellann" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/raecell-ann-galvez-03b435359/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+            <a href="mailto:raecellanndomingogalvez@gmail.com"><FaEnvelope /></a>
+            <a href="/RAECELL ANN GALVEZ - RESUME.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
           </nav>
           
           {/* Personal Information Section */}
-          <div className="personal-info">
+          <div id="about" className="personal-info">
             <div className="info-item">
               <span className="info-label">Location</span>
               <span className="info-value">Philippines</span>
@@ -390,9 +523,91 @@ const Home = () => {
           </div>
         </section>
 
-
       </div>
       </main>
+
+      {/* Contact Section - Full Width */}
+      <section id="contact" className="contact-section">
+        <div className="contact-container">
+          <div className="contact-left">
+            <h3 className="contact-title">Let's build something.</h3>
+            <p className="contact-subtitle">Feel free to reach out for collaborations, opportunities, or just a friendly hello!</p>
+            
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Your Name"
+                  required
+                  className="form-input"
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Your Email"
+                  required
+                  className="form-input"
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  placeholder="Subject"
+                  required
+                  className="form-input"
+                />
+              </div>
+              <div className="form-group">
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Your Message"
+                  required
+                  rows="5"
+                  className="form-textarea"
+                />
+              </div>
+              <button type="submit" className="submit-btn">
+                Send Message
+              </button>
+              {formStatus && (
+                <div className={`form-status ${formStatus.includes('successfully') ? 'success' : formStatus.includes('Please') || formStatus.includes('Failed') || formStatus.includes('valid') ? 'error' : 'sending'}`}>
+                  {formStatus}
+                </div>
+              )}
+            </form>
+          </div>
+          
+          <div className="contact-right">
+            <div className="contact-info">
+              <h4>Get in Touch</h4>
+              <div className="contact-item">
+                <FaEnvelope className="contact-icon" />
+                <a href="mailto:raecellanndomingogalvez@gmail.com">raecellanndomingogalvez@gmail.com</a>
+              </div>
+              <div className="contact-item">
+                <FaGithub className="contact-icon" />
+                <a href="https://github.com/raecellann" target="_blank" rel="noopener noreferrer">github.com/raecellann</a>
+              </div>
+              <div className="contact-item">
+                <FaLinkedinIn className="contact-icon" />
+                <a href="https://www.linkedin.com/in/raecell-ann-galvez-03b435359/" target="_blank" rel="noopener noreferrer">linkedin.com/in/raecell-ann-galvez-03b435359/</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Modal for displaying enlarged image */}
       {modalImages && (
@@ -428,6 +643,17 @@ const Home = () => {
             )}
           </div>
         </div>
+      )}
+      
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <button 
+          className="back-to-top" 
+          onClick={scrollToTop}
+          aria-label="Back to top"
+        >
+          <FaArrowUp />
+        </button>
       )}
     </div>
   );
