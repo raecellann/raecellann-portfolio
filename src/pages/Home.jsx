@@ -36,7 +36,7 @@ import FakeNewsDetectorImage from "../assets/works/Fake news-detector.png";
 import FakeNewsDetector1Image from "../assets/works/Fake news detector1.png";
 import FakeNewsDetector2Image from "../assets/works/Fake news-detector2.png";
 import studyingGif from "../assets/studying.gif";
-import resumeFile from "../assets/RAECELL ANN GALVEZ - RESUME.pdf";
+import resumeFile from "../assets/resume.pdf";
 
 const projects = [
   {
