@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/Home.css";
 import Switch from "../components/button";
 import Skill from "../components/Skill";
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaEnvelope, FaFilePdf, FaBars, FaArrowUp } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedinIn, FaEnvelope, FaFilePdf, FaArrowUp, FaBars, FaTimes } from "react-icons/fa";
 import emailjs from '@emailjs/browser';
 import darkSvg from "../assets/HELLO! I’M-darkmode.svg";
 import lightSvg from "../assets/HELLO! I’M-lightmode.svg";
@@ -128,8 +128,8 @@ const Home = () => {
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = (y - centerY) / centerY * -5; // Reduced sensitivity
-    const rotateY = (x - centerX) / centerX * 5;
+    const rotateX = (y - centerY) / centerY * -2; // Further reduced sensitivity
+    const rotateY = (x - centerX) / centerX * 2;
     img.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
 
@@ -360,110 +360,109 @@ const Home = () => {
     }
   };
 
-  return (
-    <div className={`home-container ${darkTheme ? "light" : "dark"}`}>
-      <div className="horizontal-divider"></div>
-      <div className="mobile-header">
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          <FaBars />
-        </button>
-        <div className="mobile-switch">
-          <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
+return (
+  <div className={`home-container ${darkTheme ? "light" : "dark"}`}>
+    <div className="horizontal-divider"></div>
+    <div className="mobile-header">
+      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+      <div className="mobile-switch">
+        <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
+      </div>
+    </div>
+    {menuOpen && (
+      <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
+        <nav className="mobile-nav">
+          <a href="#about" onClick={(e) => { scrollToAbout(e); setMenuOpen(false); }}>About Me</a>
+          <a href="#works" onClick={() => setMenuOpen(false)}>Works</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        </nav>
+      </div>
+    )}
+    <main className="main-content">
+      <div className="left-section">
+        <h3 ref={aboutRef} className="intro">
+          <img
+            src={darkTheme ? lightSvg : darkSvg}
+            alt="HELLO! I'M"
+            className="theme-image"
+          />
+        </h3>
+        <h1 className="name">
+          <img
+              src={darkTheme ? raecellLightSvg : raecelldarkSvg}
+              alt="RAECELL"
+              className="firstname-image"
+            />
+        </h1>
+        <h2 className="lastname">
+          <img
+            src={darkTheme ? galvezLightSvg : galvezDarkSvg}
+            alt="GALVEZ"
+            className="lastname-image"
+          />
+        </h2>
+        <img src={profilePic} alt="Profile" className="skills-photo" />
+        <p className="subtitle">
+          A <span className="highlight">UI/UX Designer</span> and{" "}
+          <span className="highlight">Web Developer</span>
+        </p>
+        <nav className="nav-links">
+          <a href="#about" onClick={scrollToAbout}>About Me</a>
+          <a href="#works">Works</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <nav className="social-links">
+          <a href="https://www.facebook.com/Yeshiii.amiii/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://github.com/raecellann" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+          <a href="https://www.linkedin.com/in/raecell-ann-galvez-03b435359/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+          <a href="mailto:raecellanndomingogalvez@gmail.com"><FaEnvelope /></a>
+          <a href={resumeFile} target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
+        </nav>
+        
+        {/* Personal Information Section */}
+        <div id="about" className="personal-info reveal">
+          <div className="info-item">
+            <span className="info-label">Location</span>
+            <span className="info-value">Philippines</span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Status</span>
+            <span className="info-value">Available for work</span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Experience</span>
+            <span className="info-value">Internship & School Projects</span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Specialty</span>
+            <span className="info-value">UI/UX Design</span>
+          </div>
         </div>
       </div>
-      {menuOpen && (
-        <div className="mobile-menu">
-          <nav className="mobile-nav">
-            <a href="#about" onClick={(e) => { scrollToAbout(e); setMenuOpen(false); }}>About Me</a>
-            <a href="#works" onClick={() => setMenuOpen(false)}>Works</a>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-          </nav>
+      <div className="right-section">
+        <div className="desktop-switch">
+          <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
         </div>
-      )}
-      <main className="main-content">
-        <div className="left-section">
-          <h3 ref={aboutRef} className="intro">
-            <img
-              src={darkTheme ? lightSvg : darkSvg}
-              alt="HELLO! I'M"
-              className="theme-image"
-            />
-          </h3>
-          <h1 className="name">
-            <img
-                src={darkTheme ? raecellLightSvg : raecelldarkSvg}
-                alt="RAECELL"
-                className="firstname-image"
-              />
-          </h1>
-          <h2 className="lastname">
-            <img
-              src={darkTheme ? galvezLightSvg : galvezDarkSvg}
-              alt="GALVEZ"
-              className="lastname-image"
-            />
-          </h2>
-          <img src={profilePic} alt="Profile" className="skills-photo" />
-          <p className="subtitle">
-            A <span className="highlight">UI/UX Designer</span> and{" "}
-            <span className="highlight">Web Developer</span>
-          </p>
-          <nav className="nav-links">
-            <a href="#about" onClick={scrollToAbout}>About Me</a>
-            <a href="#works">Works</a>
-            <a href="#contact">Contact</a>
-          </nav>
-          <nav className="social-links">
-            <a href="https://www.facebook.com/Yeshiii.amiii/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://github.com/raecellann" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-            <a href="https://www.linkedin.com/in/raecell-ann-galvez-03b435359/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-            <a href="mailto:raecellanndomingogalvez@gmail.com"><FaEnvelope /></a>
-            <a href={resumeFile} target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
-          </nav>
-          
-          {/* Personal Information Section */}
-          <div id="about" className="personal-info reveal">
-            <div className="info-item">
-              <span className="info-label">Location</span>
-              <span className="info-value">Philippines</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Status</span>
-              <span className="info-value">Available for work</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Experience</span>
-              <span className="info-value">Internship & School Projects</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Specialty</span>
-              <span className="info-value">UI/UX Design</span>
+        <section className="soft-skills reveal">
+          <div className="skills-left">
+            <h3>Soft Skills</h3>
+            <div className="skills-container">
+              <Skill text="#Creative" filled={true} />
+              <Skill text="#Teamwork" filled={false} />
+              <Skill text="#Adaptability" filled={false} />
+              <Skill text="#Communication" filled={true} />
+              <Skill text="#Attention to Detail" filled={true} />
+              <Skill text="#Flexibility" filled={false} />
+              <Skill text="#Time-Management" filled={true} />
             </div>
           </div>
-        </div>
-        <div className="right-section">
-          <div className="desktop-switch">
-            <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
+          <div className="skills-right">
+            <img src={profilePic} alt="Profile" className="skills-photo" />
           </div>
-          <section className="soft-skills reveal">
-            <div className="skills-left">
-              <h3>Soft Skills</h3>
-              <div className="skills-container">
-                <Skill text="#Creative" filled={true} />
-                <Skill text="#Teamwork" filled={false} />
-                <Skill text="#Adaptability" filled={false} />
-                <Skill text="#Communication" filled={true} />
-                <Skill text="#Attention to Detail" filled={true} />
-                <Skill text="#Flexibility" filled={false} />
-                <Skill text="#Time-Management" filled={true} />
-              </div>
-            </div>
-
-            <div className="skills-right">
-              <img src={profilePic} alt="Profile" className="skills-photo" />
-            </div>
-          </section>
-          <div className="description-container reveal">
+        </section>
+        <div className="description-container reveal">
             <p className="skills-description">
               I'm a Computer Science graduate passionate about building clean, user-friendly digital experiences. I specialize in front-end development and UI/UX design, turning ideas into functional and visually engaging web applications using modern tools like React, JavaScript, and Figma.
             </p>
