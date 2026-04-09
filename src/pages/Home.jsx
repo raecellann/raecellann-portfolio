@@ -36,6 +36,7 @@ import FakeNewsDetectorImage from "../assets/works/Fake news-detector.png";
 import FakeNewsDetector1Image from "../assets/works/Fake news detector1.png";
 import FakeNewsDetector2Image from "../assets/works/Fake news-detector2.png";
 import studyingGif from "../assets/studying.gif";
+import resumeFile from "../assets/RAECELL ANN GALVEZ - RESUME.pdf";
 
 const projects = [
   {
@@ -417,7 +418,7 @@ const Home = () => {
             <a href="https://github.com/raecellann" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
             <a href="https://www.linkedin.com/in/raecell-ann-galvez-03b435359/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
             <a href="mailto:raecellanndomingogalvez@gmail.com"><FaEnvelope /></a>
-            <a href="https://raecell-ann.netlify.app/RAECELL%20ANN%20GALVEZ%20-%20RESUME.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
+            <a href={resumeFile} target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
           </nav>
           
           {/* Personal Information Section */}

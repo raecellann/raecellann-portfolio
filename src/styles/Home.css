@@ -2009,13 +2009,15 @@ body {
 }
 
 .home-container.light .nahida-contact-message {
-  color: #333;
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+  color: #222;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+  font-weight: 500;
 }
 
 .home-container.light .nahida-contact-signature {
   color: #7b1fa2;
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+  font-weight: 400;
 }
 
 /* Reveal Animation Styles */
