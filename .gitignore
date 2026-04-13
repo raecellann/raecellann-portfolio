@@ -3,6 +3,7 @@
 # Resume files - exclude from GitHub (except our portfolio resume)
 *.pdf
 !src/assets/resume.pdf
+!src/assets/raecellann-galvez-resume.pdf
 RAECELL ANN GALVEZ - RESUME.pdf
 src/resume/
 public/RAECELL ANN GALVEZ - RESUME.pdf
