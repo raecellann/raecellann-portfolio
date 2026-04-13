@@ -37,11 +37,24 @@ import FakeNewsDetector1Image from "../assets/works/Fake news detector1.png";
 import FakeNewsDetector2Image from "../assets/works/Fake news-detector2.png";
 import studyingGif from "../assets/studying.gif";
 import resumeFile from "../assets/resume.pdf";
+import chatgptIcon from "../assets/chatgpt-icon.png";
+import newYork1Image from "../assets/works/new-york1.png";
+import newYork2Image from "../assets/works/new-york2.png";
+import jejemonImage from "../assets/works/jejemon.png";
+import jejemon1Image from "../assets/works/jejemon1.png";
+import jejemon2Image from "../assets/works/jejemon2.png";
+import cursorIcon from "../assets/cursor-icon.png";
+import geminiIcon from "../assets/gemini-icon.png";
+import windsurfIcon from "../assets/windsurf-icon.png";
+import claudeaiIcon from "../assets/claudeai-icon.webp";
+import blackboxIcon from "../assets/blackbox-icon.png";
 
 const projects = [
   {
     title: "Minicell",
     subtitle: "E-Commerce Clothing Line Website",
+    description: "A modern e-commerce platform for clothing sales with user authentication, shopping cart, and payment integration.",
+    technologies: ["Node.js", "MySQL", "Figma", "HTML", "CSS", "JavaScript", "Bootstrap", "Vite"],
     images: [minicellImage, minicell2Image, minicell3Image],
     link: "https://www.figma.com/proto/wLFVGNobTR4Opc2jWdT6vQ/SOFTENG-ECOMMERCE?node-id=0-1&t=3aUGIveq2vDZiEhy-1",
     github: "https://github.com/raecellann/minicell"
@@ -49,6 +62,8 @@ const projects = [
   {
     title: "ImmacuLearn",
     subtitle: "Online Collaborative Application",
+    description: "An educational platform enabling real-time collaboration between students and teachers with interactive features.",
+    technologies: ["ReactJS", "Supabase", "MySQL", "Socket.io", "Figma", "Vite"],
     images: [ImmaculearnImage, Immaculearn1, Immaculearn2, Immaculearn3],
     link: "https://www.figma.com/proto/zdDOXdyNRIojXS5bAb725s/Team-ImmacuLearn?node-id=0-1&t=vhIYtNIuboAWF2Cf-1",
     github: "https://github.com/raecellann/Immaculearn.git"
@@ -56,6 +71,8 @@ const projects = [
   {
     title: "Communiqué",
     subtitle: "Social Media Website",
+    description: "A social networking platform with posting, commenting, and real-time messaging capabilities.",
+    technologies: ["ReactJS", "Node.js", "MySQL", "Socket.io", "HTML", "CSS", "JavaScript", "Vite"],
     images: [CommuniqueImage, Communique1Image, Communique2Image],
     link: "https://www.figma.com/proto/P8dPwhOEj1HgYpbAjT1P2M/COMMUNIQUE?node-id=0-1&t=BEEumZfzwUHuxOIi-1",
     github: "https://github.com/raecellann/Communique"
@@ -63,6 +80,8 @@ const projects = [
   {
     title: "Lucky Mo To",
     subtitle: "Minute Lotto Website",
+    description: "A lottery gaming platform with automated number generation and user account management.",
+    technologies: ["ReactJS", "HTML", "CSS", "Socket.io", "Dockerfile", "Vite"],
     images: [LuckymotoImage, Luckymoto1Image, Luckymoto2Image],
     link: "https://www.figma.com/proto/zWxTc3bit2i9Sgc4pQCIr7/LUCKY-MO-TO--MINUTE-LOTTO-?node-id=1-158&t=1kyReiH0NAOsX8OB-1",
     github: "https://github.com/raecellann/Lucky-Mo-To.git"
@@ -70,25 +89,49 @@ const projects = [
   {
     title: "Infonova",
     subtitle: "Search Engine for Articles",
+    description: "A specialized search engine for finding and categorizing academic and research articles.",
+    technologies: ["Python", "React", "HTML", "CSS", "JavaScript", "Bootstrap", "Vite"],
     images: [InfonvaImage, Infonova1Image, Infonova2Image],
     github: "https://github.com/raecellann/Infonova.git"
   },
   {
     title: "8Con - East",
     subtitle: "8Con Enrollment System",
+    description: "A comprehensive enrollment management system for educational institutions with student tracking.",
+    technologies: ["PHP", "HTML", "CSS", "JavaScript", "Figma", "Vite", "MySQL"],
     images: [eightEastImage, eightEast1Image, eightEast2Image]
   },
   {
     title: "Collaborative Canvas",
     subtitle: "Real-time Drawing Application",
+    description: "A collaborative drawing tool where multiple users can create art together in real-time.",
+    technologies: ["HTML", "CSS", "JavaScript", "Socket.io", "Vite"],
     images: [CollabCanvasImage, CollabCanvas1Image],
     github: "https://github.com/raecellann/Collaborative-Canvas"
   },
   {
     title: "Fake News Detector",
     subtitle: "NLP-based News Classification System",
+    description: "An AI-powered system that analyzes and classifies news articles as real or fake using machine learning.",
+    technologies: ["Python", "NLTK", "Pickle", "HTML", "CSS", "JavaScript"],
     images: [FakeNewsDetectorImage, FakeNewsDetector1Image, FakeNewsDetector2Image],
     github: "https://github.com/raecellann/NLP-Projects/tree/main/Fake%20News%20Detector"
+  },
+  {
+    title: "New York Times Clone",
+    subtitle: "News Website Replica",
+    description: "A responsive news website clone featuring modern design, article categorization, and dynamic content management.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    images: [newYork1Image, newYork2Image],
+    github: "https://github.com/raecellann/new-york-times_clone/tree/main"
+  },
+  {
+    title: "Jejemon Translator",
+    subtitle: "Text Translation Tool",
+    description: "A fun translation tool that converts regular text to Jejemon language and vice versa with real-time conversion.",
+    technologies: ["Python", "Tkinter"],
+    images: [jejemonImage, jejemon1Image, jejemon2Image],
+    github: "https://github.com/raecellann/NLP-Projects/tree/main/Jejemon%20Translator"
   }
 ];
 
@@ -102,7 +145,10 @@ const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [currentSkillCard, setCurrentSkillCard] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const aboutRef = useRef(null);
+  const skillsGridRef = useRef(null);
   
   // Email form state
   const [formData, setFormData] = useState({
@@ -262,6 +308,116 @@ const Home = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Mobile detection and sliding card functions
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const scrollToSkillCard = (index) => {
+    if (skillsGridRef.current) {
+      const cardElement = skillsGridRef.current.children[index];
+      if (cardElement) {
+        const cardWidth = cardElement.offsetWidth;
+        const scrollPosition = index * cardWidth;
+        console.log('Mobile Slider Debug:', {
+          targetIndex: index,
+          cardWidth,
+          scrollPosition,
+          totalCards: skillsGridRef.current.children.length
+        });
+        skillsGridRef.current.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+        setCurrentSkillCard(index);
+      }
+    }
+  };
+
+  const nextSkillCard = () => {
+    const maxCards = 5; // Fixed: 5 skill categories
+    const nextIndex = currentSkillCard >= maxCards - 1 ? 0 : currentSkillCard + 1;
+    console.log('Mobile Slider Debug: Next card', nextIndex);
+    scrollToSkillCard(nextIndex);
+  };
+
+  const prevSkillCard = () => {
+    const maxCards = 5; // Fixed: 5 skill categories
+    const prevIndex = currentSkillCard === 0 ? maxCards - 1 : currentSkillCard - 1;
+    scrollToSkillCard(prevIndex);
+  };
+
+  // Handle scroll to update current card
+  useEffect(() => {
+    const handleScroll = () => {
+      if (skillsGridRef.current && isMobile) {
+        const scrollLeft = skillsGridRef.current.scrollLeft;
+        const cardWidth = skillsGridRef.current.children[0]?.offsetWidth || 0;
+        if (cardWidth > 0) {
+          const currentIndex = Math.round(scrollLeft / cardWidth);
+          setCurrentSkillCard(Math.max(0, Math.min(4, currentIndex)));
+        }
+      }
+    };
+
+    const skillsGrid = skillsGridRef.current;
+    if (skillsGrid) {
+      skillsGrid.addEventListener('scroll', handleScroll);
+      return () => skillsGrid.removeEventListener('scroll', handleScroll);
+    }
+  }, [isMobile]);
+
+  // Touch/swipe support
+  useEffect(() => {
+    if (!isMobile || !skillsGridRef.current) return;
+
+    let startX = 0;
+    let isDragging = false;
+
+    const handleTouchStart = (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+    };
+
+    const handleTouchEnd = (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      
+      if (Math.abs(diff) > 50) { // Minimum swipe distance
+        if (diff > 0) {
+          nextSkillCard(); // Swipe left - next card
+        } else {
+          prevSkillCard(); // Swipe right - previous card
+        }
+      }
+    };
+
+    const skillsGrid = skillsGridRef.current;
+    skillsGrid.addEventListener('touchstart', handleTouchStart, { passive: true });
+    skillsGrid.addEventListener('touchmove', handleTouchMove, { passive: false });
+    skillsGrid.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      skillsGrid.removeEventListener('touchstart', handleTouchStart);
+      skillsGrid.removeEventListener('touchmove', handleTouchMove);
+      skillsGrid.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [isMobile, currentSkillCard]);
 
   // Form handling functions
   const handleInputChange = (e) => {
@@ -462,6 +618,124 @@ return (
             <img src={profilePic} alt="Profile" className="skills-photo" />
           </div>
         </section>
+        <section className="technical-skills reveal">
+          <h3 className="technical-skills-title">Technical Skills</h3>
+          <div className="technical-skills-grid">
+            <div className="skill-category">
+              <h4 className="category-title">Frontend</h4>
+              <div className="category-skills">
+                <div className="skill-item">
+                  <i className="fab fa-html5 skill-icon"></i>
+                  <span>HTML</span>
+                </div>
+                <div className="skill-item">
+                  <i className="fab fa-css3-alt skill-icon"></i>
+                  <span>CSS</span>
+                </div>
+                <div className="skill-item">
+                  <i className="fab fa-react skill-icon"></i>
+                  <span>ReactJS</span>
+                </div>
+                <div className="skill-item">
+                  <i className="fab fa-bootstrap skill-icon"></i>
+                  <span>Bootstrap</span>
+                </div>
+              </div>
+              <p className="category-description">
+                Building responsive and interactive user interfaces with modern web technologies
+              </p>
+            </div>
+
+            <div className="skill-category">
+              <h4 className="category-title">Backend</h4>
+              <div className="category-skills">
+                <div className="skill-item">
+                  <i className="fab fa-node-js skill-icon"></i>
+                  <span>Node.js</span>
+                </div>
+                <div className="skill-item">
+                  <i className="fab fa-python skill-icon"></i>
+                  <span>Python</span>
+                </div>
+                <div className="skill-item">
+                  <i className="fab fa-js skill-icon"></i>
+                  <span>JavaScript</span>
+                </div>
+                <div className="skill-item">
+                  <i className="fas fa-plug skill-icon"></i>
+                  <span>Socket.io</span>
+                </div>
+              </div>
+              <p className="category-description">
+                Developing server-side logic and APIs for robust web applications
+              </p>
+            </div>
+
+            <div className="skill-category">
+              <h4 className="category-title">Database</h4>
+              <div className="category-skills">
+                <div className="skill-item">
+                  <i className="fas fa-database skill-icon"></i>
+                  <span>MySQL</span>
+                </div>
+                <div className="skill-item">
+                  <i className="fas fa-database skill-icon"></i>
+                  <span>Supabase</span>
+                </div>
+              </div>
+              <p className="category-description">
+                Managing and organizing data with efficient database systems
+              </p>
+            </div>
+
+            <div className="skill-category">
+              <h4 className="category-title">Tools</h4>
+              <div className="category-skills">
+                <div className="skill-item">
+                  <i className="fab fa-git-alt skill-icon"></i>
+                  <span>Git</span>
+                </div>
+                <div className="skill-item">
+                  <i className="fab fa-figma skill-icon"></i>
+                  <span>Figma</span>
+                </div>
+                <div className="skill-item">
+                  <i className="fas fa-cloud skill-icon"></i>
+                  <span>Cloudinary</span>
+                </div>
+              </div>
+            </div>
+            <div className="skill-category">
+              <h4 className="category-title">AI Tools</h4>
+              <div className="category-skills">
+                <div className="skill-item">
+                  <img src={chatgptIcon} alt="ChatGPT" className="skill-icon" />
+                  <span>ChatGPT</span>
+                </div>
+                <div className="skill-item">
+                  <img src={cursorIcon} alt="Cursor" className="skill-icon" />
+                  <span>Cursor</span>
+                </div>
+                <div className="skill-item">
+                  <img src={geminiIcon} alt="Gemini" className="skill-icon" />
+                  <span>Gemini</span>
+                </div>
+                <div className="skill-item">
+                  <img src={windsurfIcon} alt="Windsurf" className="skill-icon" />
+                  <span>Windsurf</span>
+                </div>
+                <div className="skill-item">
+                  <img src={claudeaiIcon} alt="Claude AI" className="skill-icon" />
+                  <span>Claude AI</span>
+                </div>
+                <div className="skill-item">
+                  <img src={blackboxIcon} alt="Blackbox" className="skill-icon" />
+                  <span>Blackbox</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <div className="description-container reveal">
             <p className="skills-description">
               I'm a Computer Science graduate passionate about building clean, user-friendly digital experiences. I specialize in front-end development and UI/UX design, turning ideas into functional and visually engaging web applications using modern tools like React, JavaScript, and Figma.
@@ -513,6 +787,14 @@ return (
               <p className="project-subtitle">
                 E-Commerce Clothing Line Website
               </p>
+              <p className="project-description">
+                {projects[0].description}
+              </p>
+              <div className="project-technologies">
+                {projects[0].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -553,6 +835,14 @@ return (
               <p className="project-subtitle">
                 Online Collaborative Application
               </p>
+              <p className="project-description">
+                {projects[1].description}
+              </p>
+              <div className="project-technologies">
+                {projects[1].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -593,6 +883,14 @@ return (
               <p className="project-subtitle">
                 Social Media Website
               </p>
+              <p className="project-description">
+                {projects[2].description}
+              </p>
+              <div className="project-technologies">
+                {projects[2].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -633,6 +931,14 @@ return (
               <p className="project-subtitle">
                 Minute Lotto Website
               </p>
+              <p className="project-description">
+                {projects[3].description}
+              </p>
+              <div className="project-technologies">
+                {projects[3].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -674,6 +980,14 @@ return (
               <p className="project-subtitle1">
                 Search Engine for Articles
               </p>
+              <p className="project-description1">
+                {projects[4].description}
+              </p>
+              <div className="project-technologies1">
+                {projects[4].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
           <div className="works-card2 reveal">
@@ -690,6 +1004,14 @@ return (
               <p className="project-subtitle1">
                 8Con Enrollment System
               </p>
+              <p className="project-description1">
+                {projects[5].description}
+              </p>
+              <div className="project-technologies1">
+                {projects[5].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -701,6 +1023,7 @@ return (
                 src={CollabCanvasImage}
                 alt="Collaborative Canvas Project Preview"
                 className="works-image"
+                style={{ objectPosition: 'top' }}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleImageClick(projects[6].images)}
@@ -732,6 +1055,14 @@ return (
               <p className="project-subtitle1">
                 Real-time Drawing Application
               </p>
+              <p className="project-description1">
+                A web-based collaborative drawing application that allows multiple users to draw and interact with each other in real-time.
+              </p>
+              <div className="project-technologies1">
+                {projects[6].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
           <div className="works-card2 reveal">
@@ -771,6 +1102,111 @@ return (
               <p className="project-subtitle1">
                 NLP-based News Classification System
               </p>
+              <p className="project-description1">
+                A machine learning-based system that uses natural language processing (NLP) to classify news articles as fake or real.
+              </p>
+              <div className="project-technologies1">
+                {projects[7].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="works4" className="works_small_card works_centered_row" style={{marginTop: '50px'}}>
+          <div className="works-card2 reveal">
+            <div className="works-image-container2">
+              <img
+                src={newYork1Image}
+                alt="New York Times Clone Project Preview"
+                className="works-image"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleImageClick(projects[8].images)}
+              />
+              <div className="project-links">
+                {projects[8].link ? (
+                  <a 
+                    href={projects[8].link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-title-link"
+                  >
+                    <h4 className="project-title1">New York Times Clone</h4>
+                  </a>
+                ) : (
+                  <h4 className="project-title1">New York Times Clone</h4>
+                )}
+                {projects[8].github && (
+                  <a 
+                    href={projects[8].github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="github-link"
+                  >
+                    <FaGithub />
+                  </a>
+                )}
+              </div>
+              <p className="project-subtitle1">
+                News Website Replica
+              </p>
+              <p className="project-description1">
+                {projects[8].description}
+              </p>
+              <div className="project-technologies1">
+                {projects[8].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="works-card2 reveal">
+            <div className="works-image-container2">
+              <img
+                src={jejemonImage}
+                alt="Jejemon Translator Project Preview"
+                className="works-image"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleImageClick(projects[9].images)}
+              />
+              <div className="project-links">
+                {projects[9].link ? (
+                  <a 
+                    href={projects[9].link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-title-link"
+                  >
+                    <h4 className="project-title1">Jejemon Translator</h4>
+                  </a>
+                ) : (
+                  <h4 className="project-title1">Jejemon Translator</h4>
+                )}
+                {projects[9].github && (
+                  <a 
+                    href={projects[9].github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="github-link"
+                  >
+                    <FaGithub />
+                  </a>
+                )}
+              </div>
+              <p className="project-subtitle1">
+                Text Translation Tool
+              </p>
+              <p className="project-description1">
+                {projects[9].description}
+              </p>
+              <div className="project-technologies1">
+                {projects[9].technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>

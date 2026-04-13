@@ -571,7 +571,7 @@ body {
 .works-card {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   padding: 15px;
   background: rgba(255, 255, 255, 0.02);
   border-radius: 15px;
@@ -651,11 +651,271 @@ body {
   margin-bottom: 0;
 }
 
+.project-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  color: inherit;
+  opacity: 0.7;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.tech-tag {
+  background: rgba(156, 39, 176, 0.2);
+  color: #9c27b0;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  border: 1px solid rgba(156, 39, 176, 0.3);
+}
+
+.project-description1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  color: inherit;
+  opacity: 0.7;
+  margin: 6px 0;
+  line-height: 1.3;
+}
+
+.project-technologies1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.project-technologies1 .tech-tag {
+  background: rgba(156, 39, 176, 0.2);
+  color: #9c27b0;
+  padding: 3px 6px;
+  border-radius: 10px;
+  font-size: 0.6rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  border: 1px solid rgba(156, 39, 176, 0.3);
+}
+
+.skills-container-full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+.technical-skills-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #9c27b0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.technical-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  grid-auto-rows: minmax(180px, auto);
+}
+
+/* Mobile responsive for technical skills */
+@media (max-width: 768px) {
+  .technical-skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .skill-category {
+    padding: 15px;
+  }
+  
+  .category-title {
+    font-size: 1.1rem;
+  }
+  
+  .skill-item {
+    padding: 6px 10px;
+  }
+  
+  .skill-icon {
+    font-size: 1rem;
+    width: 18px;
+  }
+  
+  .skill-item span {
+    font-size: 0.85rem;
+  }
+  
+  .category-description {
+    font-size: 0.75rem;
+  }
+}
+
+.skill-category {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+
+.skill-category:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(156, 39, 176, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(156, 39, 176, 0.1);
+}
+
+.category-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #9c27b0;
+  margin-bottom: 15px;
+  text-align: center;
+  opacity: 1;
+}
+
+.category-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(156, 39, 176, 0.08);
+  border: 1px solid rgba(156, 39, 176, 0.15);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  background: rgba(156, 39, 176, 0.15);
+  border-color: rgba(156, 39, 176, 0.3);
+  transform: translateX(5px);
+}
+
+.skill-icon {
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Frontend Icon Colors */
+.fa-html5 {
+  color: #E34C26;
+}
+
+.fa-css3-alt {
+  color: #1572B6;
+}
+
+.fa-js {
+  color: #F7DF1E;
+}
+
+.fa-react {
+  color: #61DAFB;
+}
+
+.fa-bootstrap {
+  color: #7952B3;
+}
+
+/* Backend Icon Colors */
+.fa-node-js {
+  color: #339933;
+}
+
+.fa-php {
+  color: #777BB4;
+}
+
+.fa-python {
+  color: #3776AB;
+}
+
+.fa-plug {
+  color: #666666;
+}
+
+/* Database Icon Colors */
+.fa-database {
+  color: #4479A1;
+}
+
+/* Tools Icon Colors */
+.fa-git-alt {
+  color: #F05032;
+}
+
+.fa-figma {
+  color: #F24E1E;
+}
+
+/* AI Tools Custom Colors */
+.fa-robot {
+  color: #10A37F; /* ChatGPT Green */
+}
+
+.fa-mouse-pointer {
+  color: #000000; /* Cursor Black */
+}
+
+.fa-brain {
+  color: #4285F4; /* Gemini Blue */
+}
+
+.fa-wind {
+  color: #00A8E8; /* Windsurf Light Blue */
+}
+
+.fa-comments {
+  color: #FF6B35; /* Claude Orange */
+}
+
+.fa-cube {
+  color: #000000; /* Blackbox Black */
+}
+
+.skill-item span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.category-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  color: inherit;
+  opacity: 0.7;
+  margin-top: 12px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
 .works_small_card{
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin: 0 auto;
+  gap: 25px;
+  margin: 0 auto 30px auto;
   padding: 8px;
   background: rgba(255, 255, 255, 0.02);
   border-radius: 15px;
@@ -672,7 +932,7 @@ body {
 .works_centered_row {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 15px;
   margin: 0 auto;
   max-width: 900px;
@@ -1122,7 +1382,7 @@ body {
 
   .works_small_card {
     flex-direction: column;
-    gap: 10px;
+    gap: 25px;
     justify-content: center;
     align-items: center;
     width: 100%;
