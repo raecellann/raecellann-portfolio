@@ -562,7 +562,7 @@ return (
         <img src={profilePic} alt="Profile" className="skills-photo" />
         <p className="subtitle">
           A <span className="highlight">UI/UX Designer</span> and{" "}
-          <span className="highlight">Web Developer</span>
+          <span className="highlight">Front-End Web Developer</span>
         </p>
         <nav className="nav-links">
           <a href="#about" onClick={scrollToAbout}>About Me</a>
@@ -1364,6 +1364,13 @@ return (
           <FaArrowUp />
         </button>
       )}
+      
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <p className="footer-text"> 2026 Raecell Ann Galvez. All Rights Reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };
