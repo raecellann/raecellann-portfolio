@@ -574,7 +574,7 @@ return (
           <a href="https://github.com/raecellann" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/raecell-ann-galvez-03b435359/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
           <a href="mailto:raecellanndomingogalvez@gmail.com"><FaEnvelope /></a>
-          <a href={resumeFile} target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
         </nav>
         
         {/* Personal Information Section */}
