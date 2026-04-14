@@ -1,14 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/resume.pdf",
-      "destination": "/resume.pdf"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/resume.pdf",
