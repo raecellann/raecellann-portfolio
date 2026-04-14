@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node -e \"const fs = require('fs'); fs.copyFileSync('public/resume.pdf', 'dist/resume.pdf');\"",
     "serve": "vite preview"
   },
   "dependencies": {

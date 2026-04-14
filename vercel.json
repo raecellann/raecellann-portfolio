@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/resume.pdf",
-      "destination": "/assets/raecellann-galvez-resume-fHQ3N8_b.pdf"
+      "destination": "/resume.pdf"
     }
   ]
 }
