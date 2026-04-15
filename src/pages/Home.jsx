@@ -529,14 +529,11 @@ return (
     <header className="fixed-navbar">
       <div className="navbar-container">
         <div className="navbar-left">
-          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FaTimes /> : <FaBars />}
-          </button>
         </div>
         <nav className="navbar-nav">
           <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); }}>About Me</a>
           <a href="#experience" onClick={(e) => { e.preventDefault(); smoothScrollTo('experience'); }}>Experience</a>
-          <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); }}>Works</a>
+          <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); }}>Projects</a>
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }}>Contact</a>
         </nav>
@@ -544,25 +541,23 @@ return (
           <div className="navbar-switch">
             <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
           </div>
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
       </div>
     </header>
 
     <div className="horizontal-divider"></div>
-    <div className="mobile-header">
-      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <FaTimes /> : <FaBars />}
-      </button>
-      <div className="mobile-switch">
-        <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
-      </div>
-    </div>
     {menuOpen && (
       <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
+        <button className="mobile-close" onClick={() => setMenuOpen(false)}>
+          <FaTimes />
+        </button>
         <nav className="mobile-nav">
           <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); setMenuOpen(false); }}>About Me</a>
           <a href="#experience" onClick={(e) => { e.preventDefault(); smoothScrollTo('experience'); setMenuOpen(false); }}>Experience</a>
-          <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); setMenuOpen(false); }}>Works</a>
+          <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); setMenuOpen(false); }}>Projects</a>
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Resume</a>
           <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); setMenuOpen(false); }}>Contact</a>
         </nav>
@@ -594,7 +589,7 @@ return (
         <img src={profilePic} alt="Profile" className="skills-photo" />
         <p className="subtitle">
           A <span className="highlight">UI/UX Designer</span> and{" "}
-          <span className="highlight">Front-End Web Developer</span>
+          <span className="highlight">Junior Front-End Web Developer</span>
         </p>
         <nav className="social-links">
           <a href="https://www.facebook.com/Yeshiii.amiii/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
@@ -663,10 +658,6 @@ return (
                   <i className="fab fa-react skill-icon"></i>
                   <span>ReactJS</span>
                 </div>
-                <div className="skill-item">
-                  <i className="fab fa-bootstrap skill-icon"></i>
-                  <span>Bootstrap</span>
-                </div>
               </div>
               <p className="category-description">
                 Building responsive and interactive user interfaces with modern web technologies
@@ -683,10 +674,6 @@ return (
                 <div className="skill-item">
                   <i className="fab fa-python skill-icon"></i>
                   <span>Python</span>
-                </div>
-                <div className="skill-item">
-                  <i className="fas fa-plug skill-icon"></i>
-                  <span>Socket.io</span>
                 </div>
               </div>
               <p className="category-description">
@@ -818,14 +805,56 @@ return (
                   
                 </div>
               </div>
-              
+
+              {/* Immaculearn Project */}
+              <div className="experience-item">
+                <div className="experience-content">
+                  <div className="experience-header">
+                    <div className="experience-title-section">
+                      <h4 className="experience-position">Immaculearn - Thesis Project (Collaborative Learning Web Application)</h4>
+                      <h5 className="experience-company">React, Node.js, MySQL</h5>
+                    </div>
+                    <div className="project-image-container">
+                      <img 
+                        src={ImmaculearnImage} 
+                        alt="Immaculearn Platform" 
+                        className="project-image"
+                        onClick={() => handleImageClick([ImmaculearnImage, Immaculearn1, Immaculearn2, Immaculearn3])}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Immaculearn Project Showcase */}
+                  <div className="experience-project">
+                    <h5 className="project-name">Immaculearn</h5>
+                    <div className="project-details">
+                      <p className="project-description">
+                        <strong>Project Leadership:</strong> Led front-end development and UI/UX design for a collaborative learning platform supporting real-time communication, task management, and file sharing for students and instructors.
+                      </p>
+                      <p className="project-description">
+                        <strong>Frontend Development:</strong> Built responsive and user-friendly interfaces using React, improving accessibility and user engagement across devices.
+                      </p>
+                      <p className="project-description">
+                        <strong>Feature Integration:</strong> Integrated key features including real-time collaboration, secure authentication, and organized file management, enhancing productivity and academic workflow.
+                      </p>
+                      <div className="project-technologies">
+                        <span className="tech-tag">React</span>
+                        <span className="tech-tag">Node.js</span>
+                        <span className="tech-tag">MySQL</span>
+                        <span className="tech-tag">Real-time Communication</span>
+                        <span className="tech-tag">Authentication</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               
                        </div>
           </section>
 
-          {/* Works Section */}
+          {/* Projects Section */}
           <section id="works" className="works-section reveal">
-            <h3 className="works-title">Works</h3>
+            <h3 className="works-title">Projects</h3>
             <div className="works-divider"></div>
 
           <div className="works-card reveal">
@@ -879,8 +908,8 @@ return (
           <div className="works-card reveal">
             <div className="works-image-container">
               <img
-                src={ImmaculearnImage}
-                alt="ImmacuLearn Project Preview"
+                src={CommuniqueImage}
+                alt="Project 3 Preview"
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
@@ -894,10 +923,10 @@ return (
                     rel="noopener noreferrer"
                     className="project-title-link"
                   >
-                    <h4 className="project-title">ImmacuLearn</h4>
+                    <h4 className="project-title">Communiqué</h4>
                   </a>
                 ) : (
-                  <h4 className="project-title">ImmacuLearn</h4>
+                  <h4 className="project-title">Communiqué</h4>
                 )}
                 {projects[1].github && (
                   <a 
@@ -911,7 +940,7 @@ return (
                 )}
               </div>
               <p className="project-subtitle">
-                Online Collaborative Application
+                Social Media Website
               </p>
               <p className="project-description">
                 {projects[1].description}
@@ -927,8 +956,8 @@ return (
           <div className="works-card reveal">
             <div className="works-image-container">
               <img
-                src={CommuniqueImage}
-                alt="Project 3 Preview"
+                src={LuckymotoImage}
+                alt="Lucky Mo To Project Preview"
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
@@ -942,10 +971,10 @@ return (
                     rel="noopener noreferrer"
                     className="project-title-link"
                   >
-                    <h4 className="project-title">Communiqué</h4>
+                    <h4 className="project-title">Lucky Mo To</h4>
                   </a>
                 ) : (
-                  <h4 className="project-title">Communiqué</h4>
+                  <h4 className="project-title">Lucky Mo To</h4>
                 )}
                 {projects[2].github && (
                   <a 
@@ -959,7 +988,7 @@ return (
                 )}
               </div>
               <p className="project-subtitle">
-                Social Media Website
+                Minute Lotto Website
               </p>
               <p className="project-description">
                 {projects[2].description}
@@ -971,64 +1000,14 @@ return (
               </div>
             </div>
           </div>
-
-          <div className="works-card reveal">
-            <div className="works-image-container">
-              <img
-                src={LuckymotoImage}
-                alt="Lucky Mo To Project Preview"
-                className="works-image"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[3].images)}
-              />
-              <div className="project-links">
-                {projects[3].link ? (
-                  <a 
-                    href={projects[3].link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="project-title-link"
-                  >
-                    <h4 className="project-title">Lucky Mo To</h4>
-                  </a>
-                ) : (
-                  <h4 className="project-title">Lucky Mo To</h4>
-                )}
-                {projects[3].github && (
-                  <a 
-                    href={projects[3].github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="github-link"
-                  >
-                    <FaGithub />
-                  </a>
-                )}
-              </div>
-              <p className="project-subtitle">
-                Minute Lotto Website
-              </p>
-              <p className="project-description">
-                {projects[3].description}
-              </p>
-              <div className="project-technologies">
-                {projects[3].technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-            </div>
-          </div>
         </section>
-        <section id="works2" className="works_small_card">
+        <section id="works3" className="works_small_card works_centered_row">
           <div className="works-card2 reveal">
             <div className="works-image-container2">
               <img
-                src={InfonvaImage}
-                alt="Infonova Project Preview"
+                src={CollabCanvasImage}
+                alt="Collaborative Canvas Project Preview"
                 className="works-image"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
                 onClick={() => handleImageClick(projects[4].images)}
               />
               <div className="project-links">
@@ -1039,10 +1018,10 @@ return (
                     rel="noopener noreferrer"
                     className="project-title-link"
                   >
-                    <h4 className="project-title1">Infonova</h4>
+                    <h4 className="project-title1">Collaborative Canvas</h4>
                   </a>
                 ) : (
-                  <h4 className="project-title1">Infonova</h4>
+                  <h4 className="project-title1">Collaborative Canvas</h4>
                 )}
                 {projects[4].github && (
                   <a 
@@ -1056,62 +1035,14 @@ return (
                 )}
               </div>
               <p className="project-subtitle1">
-                Search Engine for Articles
-              </p>
-              <p className="project-description1">
-                {projects[4].description}
-              </p>
-              <div className="project-technologies1">
-                {projects[4].technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="works3" className="works_small_card works_centered_row">
-          <div className="works-card2 reveal">
-            <div className="works-image-container2">
-              <img
-                src={CollabCanvasImage}
-                alt="Collaborative Canvas Project Preview"
-                className="works-image"
-                onClick={() => handleImageClick(projects[5].images)}
-              />
-              <div className="project-links">
-                {projects[5].link ? (
-                  <a 
-                    href={projects[5].link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="project-title-link"
-                  >
-                    <h4 className="project-title1">Collaborative Canvas</h4>
-                  </a>
-                ) : (
-                  <h4 className="project-title1">Collaborative Canvas</h4>
-                )}
-                {projects[5].github && (
-                  <a 
-                    href={projects[5].github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="github-link"
-                  >
-                    <FaGithub />
-                  </a>
-                )}
-              </div>
-              <p className="project-subtitle1">
                 Real-time Drawing Application
               </p>
               <p className="project-description1">
-                {projects[5].description}
+                {projects[4].description}
                 A web-based collaborative drawing application that allows multiple users to draw and interact with each other in real-time.
               </p>
               <div className="project-technologies1">
-                {projects[5].technologies.map((tech, index) => (
+                {projects[4].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1125,12 +1056,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[6].images)}
+                onClick={() => handleImageClick(projects[5].images)}
               />
               <div className="project-links">
-                {projects[6].github ? (
+                {projects[5].github ? (
                   <a 
-                    href={projects[6].github} 
+                    href={projects[5].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1140,9 +1071,9 @@ return (
                 ) : (
                   <h4 className="project-title1">Fake News Detector</h4>
                 )}
-                {projects[6].github && (
+                {projects[5].github && (
                   <a 
-                    href={projects[6].github} 
+                    href={projects[5].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1158,7 +1089,7 @@ return (
                 A machine learning-based system that uses natural language processing (NLP) to classify news articles as fake or real.
               </p>
               <div className="project-technologies1">
-                {projects[6].technologies.map((tech, index) => (
+                {projects[5].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1175,12 +1106,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[7].images)}
+                onClick={() => handleImageClick(projects[6].images)}
               />
               <div className="project-links">
-                {projects[7].link ? (
+                {projects[6].link ? (
                   <a 
-                    href={projects[7].link} 
+                    href={projects[6].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1190,9 +1121,9 @@ return (
                 ) : (
                   <h4 className="project-title1">New York Times Clone</h4>
                 )}
-                {projects[7].github && (
+                {projects[6].github && (
                   <a 
-                    href={projects[7].github} 
+                    href={projects[6].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1205,10 +1136,10 @@ return (
                 News Website Replica
               </p>
               <p className="project-description1">
-                {projects[7].description}
+                {projects[6].description}
               </p>
               <div className="project-technologies1">
-                {projects[7].technologies.map((tech, index) => (
+                {projects[6].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1217,29 +1148,29 @@ return (
           <div className="works-card2 reveal">
             <div className="works-image-container2">
               <img
-                src={jejemonImage}
-                alt="Jejemon Translator Project Preview"
+                src={InfonvaImage}
+                alt="Infonova Project Preview"
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[8].images)}
+                onClick={() => handleImageClick(projects[3].images)}
               />
               <div className="project-links">
-                {projects[8].link ? (
+                {projects[3].link ? (
                   <a 
-                    href={projects[8].link} 
+                    href={projects[3].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
                   >
-                    <h4 className="project-title1">Jejemon Translator</h4>
+                    <h4 className="project-title1">Infonova</h4>
                   </a>
                 ) : (
-                  <h4 className="project-title1">Jejemon Translator</h4>
+                  <h4 className="project-title1">Infonova</h4>
                 )}
-                {projects[8].github && (
+                {projects[3].github && (
                   <a 
-                    href={projects[8].github} 
+                    href={projects[3].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1249,13 +1180,13 @@ return (
                 )}
               </div>
               <p className="project-subtitle1">
-                Text Translation Tool
+                Search Engine for Articles
               </p>
               <p className="project-description1">
-                {projects[8].description}
+                {projects[3].description}
               </p>
               <div className="project-technologies1">
-                {projects[8].technologies.map((tech, index) => (
+                {projects[3].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
