@@ -216,7 +216,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 15%;
+  margin-top: 30px;
   padding: 10px 10px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
@@ -678,14 +678,13 @@ body {
 }
 
 .tech-tag {
-  background: rgba(156, 39, 176, 0.2);
-  color: #9c27b0;
+  background: #9c27b0;
+  color: white;
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 0.7rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  border: 1px solid rgba(156, 39, 176, 0.3);
 }
 
 .project-description1 {
@@ -705,14 +704,13 @@ body {
 }
 
 .project-technologies1 .tech-tag {
-  background: rgba(156, 39, 176, 0.2);
-  color: #9c27b0;
+  background: #9c27b0;
+  color: white;
   padding: 3px 6px;
   border-radius: 10px;
   font-size: 0.6rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  border: 1px solid rgba(156, 39, 176, 0.3);
 }
 
 .skills-container-full-width {
@@ -1181,14 +1179,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 50vh;
-  background-color: rgba(26, 26, 26, 0.9);
+  height: 100vh;
+  background-color: rgba(26, 26, 26, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding-top: 80px;
   transform: translateY(-100%);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2546,3 +2544,539 @@ body {
     flex-direction: column;
   }
 }
+
+/* Experience Section Styles */
+.experience-section {
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+.experience-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.experience-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  margin: 0 auto 40px;
+  border-radius: 2px;
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-item {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.experience-date {
+  min-width: 100px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  height: fit-content;
+}
+
+.experience-content {
+  flex: 1;
+}
+
+.experience-position {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  color: #b8b8b8;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.experience-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+  margin-bottom: 20px;
+}
+
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Light mode styles for experience section */
+.light .experience-title {
+  background: linear-gradient(45deg, #4a5568 0%, #2d3748 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .experience-divider {
+  background: linear-gradient(45deg, #4a5568 0%, #2d3748 100%);
+}
+
+.light .experience-item {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.light .experience-item:hover {
+  border-color: rgba(74, 85, 104, 0.3);
+}
+
+.light .experience-date {
+  color: #4a5568;
+  background: rgba(74, 85, 104, 0.1);
+}
+
+.light .experience-position {
+  color: #2d3748;
+}
+
+.light .experience-company {
+  color: #718096;
+}
+
+.light .experience-description {
+  color: #4a5568;
+}
+
+.light .skill-tag {
+  background: linear-gradient(45deg, #4a5568 0%, #2d3748 100%);
+}
+
+/* Mobile responsive styles for experience section */
+@media (max-width: 768px) {
+  .experience-section {
+    margin: 40px 0;
+    padding: 0 15px;
+  }
+  
+  .experience-title {
+    font-size: 2rem;
+  }
+  
+  .experience-timeline {
+    gap: 30px;
+  }
+  
+  .experience-item {
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 20px;
+  }
+  
+  .experience-date {
+    min-width: auto;
+    width: fit-content;
+  }
+  
+  .experience-position {
+    font-size: 1.2rem;
+  }
+  
+  .experience-company {
+    font-size: 1rem;
+  }
+  
+  .experience-description {
+    font-size: 0.95rem;
+  }
+  
+  .experience-skills {
+    gap: 8px;
+  }
+  
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+}
+
+/* Experience Header Styles */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.experience-title-section {
+  flex: 1;
+}
+
+.experience-header .project-image-container {
+  flex-shrink: 0;
+  width: 180px;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.experience-header .project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.experience-header .project-image:hover {
+  transform: scale(1.05);
+}
+
+.experience-header .project-image-container:hover {
+  border-color: rgba(102, 126, 234, 0.6);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+}
+
+/* Experience Project Showcase Styles */
+.experience-project {
+  margin-top: 20px;
+}
+
+.project-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.project-showcase {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.project-image-container {
+  flex-shrink: 0;
+  width: 200px;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+}
+
+.project-image-container:hover {
+  border-color: rgba(102, 126, 234, 0.6);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.project-details {
+  flex: 1;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #d0d0d0;
+  margin-bottom: 15px;
+}
+
+.project-description strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.project-technologies .tech-tag {
+  background: #9c27b0;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Light mode styles for experience header */
+.light .experience-header .project-image-container {
+  border-color: rgba(74, 85, 104, 0.3);
+}
+
+.light .experience-header .project-image-container:hover {
+  border-color: rgba(74, 85, 104, 0.6);
+  box-shadow: 0 6px 20px rgba(74, 85, 104, 0.2);
+}
+
+/* Light mode styles for experience project */
+.light .project-name {
+  background: linear-gradient(45deg, #4a5568 0%, #2d3748 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .project-image-container {
+  border-color: rgba(74, 85, 104, 0.3);
+}
+
+.light .project-image-container:hover {
+  border-color: rgba(74, 85, 104, 0.6);
+  box-shadow: 0 8px 25px rgba(74, 85, 104, 0.2);
+}
+
+.light .project-description {
+  color: #4a5568;
+}
+
+.light .project-description strong {
+  color: #2d3748;
+}
+
+.light .project-technologies .tech-tag {
+  background: #b794f6;
+}
+
+.light .tech-tag {
+  background: #b794f6;
+}
+
+.light .project-technologies1 .tech-tag {
+  background: #b794f6;
+}
+
+/* Mobile responsive styles for experience project */
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .experience-title-section {
+    text-align: center;
+  }
+  
+  .experience-header .project-image-container {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .project-showcase {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .project-image-container {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .project-name {
+    font-size: 1.1rem;
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fixed Navbar Styles */
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+.navbar-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav a:hover::after {
+  width: 100%;
+}
+
+.navbar-nav a:hover {
+  color: #667eea;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-switch {
+  display: flex;
+  align-items: center;
+}
+
+/* Light mode styles for navbar */
+.light .fixed-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .navbar-nav a {
+  color: #2d3748;
+}
+
+.light .navbar-nav a:hover {
+  color: #4a5568;
+}
+
+.light .navbar-nav a::after {
+  background: linear-gradient(45deg, #4a5568 0%, #2d3748 100%);
+}
+
+/* Mobile responsive styles for navbar */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 12px 20px;
+  }
+  
+  .navbar-nav {
+    display: none; /* Hide desktop nav on mobile */
+  }
+  
+  .navbar-left .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .light .navbar-left .hamburger {
+    color: #2d3748;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-left .hamburger {
+    display: none; /* Hide hamburger on desktop */
+  }
+  
+  .mobile-header {
+    display: none; /* Hide mobile header on desktop */
+  }
+}
+
+/* Add top padding to main content to account for fixed navbar */
+.main-content {
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 60px;
+  }
+}
+

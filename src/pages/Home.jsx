@@ -11,37 +11,38 @@ import galvezLightSvg from "../assets/GALVEZ-lightmode.svg";
 import raecellLightSvg from "../assets/RAECELL-ANN-lightmode.svg";
 import raecelldarkSvg from "../assets/RAECELL-ANN-darkmode.svg";
 import profilePic from "../assets/picture.png"; // adjust path if needed
-import minicellImage from "../assets/works/Minicell.png";
-import minicell2Image from "../assets/works/Minicell2.png";
-import minicell3Image from "../assets/works/Minicell3.png";
-import eightEastImage from "../assets/works/8EAST.png";
-import eightEast1Image from "../assets/works/8EAST1.png";
-import eightEast2Image from "../assets/works/8EAST2.png";
-import CommuniqueImage from "../assets/works/Communique.jpg";
-import Communique1Image from "../assets/works/Communique1.png";
-import Communique2Image from "../assets/works/Communique2.png";
-import LuckymotoImage from "../assets/works/lucky-moto.png";
-import Luckymoto1Image from "../assets/works/lucky-moto1.png";
-import Luckymoto2Image from "../assets/works/lucky-moto2.png";
-import InfonvaImage from "../assets/works/infonova.png";
-import Infonova1Image from "../assets/works/infonova1.png";
-import Infonova2Image from "../assets/works/infonova2.png";
-import ImmaculearnImage from "../assets/works/Immaculearn.png";
-import Immaculearn1 from "../assets/works/Immaculearn-1.png";
-import Immaculearn2 from "../assets/works/Immaculearn-2.png";
-import Immaculearn3 from "../assets/works/Immaculearn-3.png";
-import CollabCanvasImage from "../assets/works/Collab-canvas.png";
-import CollabCanvas1Image from "../assets/works/Collab-canvas1.png";
-import FakeNewsDetectorImage from "../assets/works/Fake news-detector.png";
-import FakeNewsDetector1Image from "../assets/works/Fake news detector1.png";
-import FakeNewsDetector2Image from "../assets/works/Fake news-detector2.png";
+const minicellImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/Minicell_y05aip.png";
+const minicell2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Minicell2_ovpfyn.png";
+const minicell3Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Minicell3_m7mzs5.png";
+const eightEastImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/8EAST_rmlkub.png";
+const eightEast1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/8EAST1_d7gvyi.png";
+const eightEast2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/8EAST2_zxalho.png";
+const CommuniqueImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Communique_kupbzy.jpg";
+const Communique1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Communique1_bcpid8.png";
+const Communique2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Communique2_piw3vh.png";
+const LuckymotoImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/lucky-moto_t0ltey.png";
+const Luckymoto1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/lucky-moto1_rnog12.png";
+const Luckymoto2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/lucky-moto2_umxccw.png";
+const Luckymoto3Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/lucky-moto3_umxccw.png";
+const InfonvaImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228807/infonova_yrqniw.png";
+const Infonova1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/infonova1_fo80je.png";
+const Infonova2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/infonova2_nautnz.png";
+const ImmaculearnImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228807/Immaculearn_z3qdqk.png";
+const Immaculearn1 = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Immaculearn-1_fyuuaa.png";
+const Immaculearn2 = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228811/Immaculearn-2_lmuroj.png";
+const Immaculearn3 = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/Immaculearn-3_ju9rgg.png";
+const CollabCanvasImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Collab-canvas_pgbbkq.png";
+const CollabCanvas1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Collab-canvas1_skyiu9.png";
+const FakeNewsDetectorImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228807/Fake_news-detector_ha16rj.png";
+const FakeNewsDetector1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/Fake_news-detector1_oik4lf.png";
+const FakeNewsDetector2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228811/Fake_news-detector2_vq5dio.png";
 import studyingGif from "../assets/studying.gif";
 import chatgptIcon from "../assets/chatgpt-icon.png";
 import newYork1Image from "../assets/works/new-york1.png";
 import newYork2Image from "../assets/works/new-york2.png";
-import jejemonImage from "../assets/works/jejemon.png";
-import jejemon1Image from "../assets/works/jejemon1.png";
-import jejemon2Image from "../assets/works/jejemon2.png";
+const jejemonImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon_tlsppc.png";
+const jejemon1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon1_exf76r.png";
+const jejemon2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon2_clkmo5.png";
 import cursorIcon from "../assets/cursor-icon.png";
 import geminiIcon from "../assets/gemini-icon.png";
 import windsurfIcon from "../assets/windsurf-icon.png";
@@ -81,7 +82,7 @@ const projects = [
     subtitle: "Minute Lotto Website",
     description: "A lottery gaming platform with automated number generation and user account management.",
     technologies: ["ReactJS", "HTML", "CSS", "Socket.io", "Dockerfile", "Vite"],
-    images: [LuckymotoImage, Luckymoto1Image, Luckymoto2Image],
+    images: [LuckymotoImage, Luckymoto1Image, Luckymoto2Image, Luckymoto3Image],
     link: "https://www.figma.com/proto/zWxTc3bit2i9Sgc4pQCIr7/LUCKY-MO-TO--MINUTE-LOTTO-?node-id=1-158&t=1kyReiH0NAOsX8OB-1",
     github: "https://github.com/raecellann/Lucky-Mo-To.git"
   },
@@ -92,13 +93,6 @@ const projects = [
     technologies: ["Python", "React", "HTML", "CSS", "JavaScript", "Bootstrap", "Vite"],
     images: [InfonvaImage, Infonova1Image, Infonova2Image],
     github: "https://github.com/raecellann/Infonova.git"
-  },
-  {
-    title: "8Con - East",
-    subtitle: "8Con Enrollment System",
-    description: "A comprehensive enrollment management system for educational institutions with student tracking.",
-    technologies: ["PHP", "HTML", "CSS", "JavaScript", "Figma", "Vite", "MySQL"],
-    images: [eightEastImage, eightEast1Image, eightEast2Image]
   },
   {
     title: "Collaborative Canvas",
@@ -219,6 +213,20 @@ const Home = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Smooth scroll to element
+  const smoothScrollTo = (elementId) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const navbarHeight = document.querySelector('.fixed-navbar')?.offsetHeight || 0;
+      const elementPosition = element.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
@@ -230,7 +238,7 @@ const Home = () => {
   // Scroll to About section
   const scrollToAbout = (e) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    smoothScrollTo('about');
   };
 
   // Scroll-reveal animation with direction awareness
@@ -517,6 +525,29 @@ const Home = () => {
 
 return (
   <div className={`home-container ${darkTheme ? "light" : "dark"}`}>
+    {/* Fixed Navbar */}
+    <header className="fixed-navbar">
+      <div className="navbar-container">
+        <div className="navbar-left">
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+        <nav className="navbar-nav">
+          <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); }}>About Me</a>
+          <a href="#experience" onClick={(e) => { e.preventDefault(); smoothScrollTo('experience'); }}>Experience</a>
+          <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); }}>Works</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }}>Contact</a>
+        </nav>
+        <div className="navbar-right">
+          <div className="navbar-switch">
+            <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
+          </div>
+        </div>
+      </div>
+    </header>
+
     <div className="horizontal-divider"></div>
     <div className="mobile-header">
       <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -529,9 +560,11 @@ return (
     {menuOpen && (
       <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
         <nav className="mobile-nav">
-          <a href="#about" onClick={(e) => { scrollToAbout(e); setMenuOpen(false); }}>About Me</a>
-          <a href="#works" onClick={() => setMenuOpen(false)}>Works</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); setMenuOpen(false); }}>About Me</a>
+          <a href="#experience" onClick={(e) => { e.preventDefault(); smoothScrollTo('experience'); setMenuOpen(false); }}>Experience</a>
+          <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); setMenuOpen(false); }}>Works</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Resume</a>
+          <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); setMenuOpen(false); }}>Contact</a>
         </nav>
       </div>
     )}
@@ -563,17 +596,11 @@ return (
           A <span className="highlight">UI/UX Designer</span> and{" "}
           <span className="highlight">Front-End Web Developer</span>
         </p>
-        <nav className="nav-links">
-          <a href="#about" onClick={scrollToAbout}>About Me</a>
-          <a href="#works">Works</a>
-          <a href="#contact">Contact</a>
-        </nav>
         <nav className="social-links">
           <a href="https://www.facebook.com/Yeshiii.amiii/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
           <a href="https://github.com/raecellann" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/raecell-ann-galvez-03b435359/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
           <a href="mailto:raecellanndomingogalvez@gmail.com"><FaEnvelope /></a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf /></a>
         </nav>
         
         {/* Personal Information Section */}
@@ -597,9 +624,6 @@ return (
         </div>
       </div>
       <div className="right-section">
-        <div className="desktop-switch">
-          <Switch checked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)} />
-        </div>
         <section className="soft-skills reveal">
           <div className="skills-left">
             <h3>Soft Skills</h3>
@@ -632,6 +656,10 @@ return (
                   <span>CSS</span>
                 </div>
                 <div className="skill-item">
+                  <i className="fab fa-js skill-icon"></i>
+                  <span>JavaScript</span>
+                </div>
+                <div className="skill-item">
                   <i className="fab fa-react skill-icon"></i>
                   <span>ReactJS</span>
                 </div>
@@ -655,10 +683,6 @@ return (
                 <div className="skill-item">
                   <i className="fab fa-python skill-icon"></i>
                   <span>Python</span>
-                </div>
-                <div className="skill-item">
-                  <i className="fab fa-js skill-icon"></i>
-                  <span>JavaScript</span>
                 </div>
                 <div className="skill-item">
                   <i className="fas fa-plug skill-icon"></i>
@@ -743,6 +767,61 @@ return (
               I enjoy combining creativity with problem-solving—whether it's developing responsive websites, designing intuitive interfaces, or using data and AI tools to improve efficiency. I'm always exploring new technologies and continuously refining my skills to create meaningful and impactful digital solutions.
             </p>
           </div>
+
+          {/* Experience Section */}
+          <section id="experience" className="experience-section reveal">
+            <h3 className="experience-title">Experience</h3>
+            <div className="experience-divider"></div>
+            
+            <div className="experience-timeline">
+              <div className="experience-item">
+                <div className="experience-content">
+                  <div className="experience-header">
+                    <div className="experience-title-section">
+                      <h4 className="experience-position">Web Developer and Marketing Intern</h4>
+                      <h5 className="experience-company">8Con East - Meycauayan, Bulacan, Philippines</h5>
+                    </div>
+                    <div className="project-image-container">
+                      <img 
+                        src={eightEastImage} 
+                        alt="8Con Enrollment System" 
+                        className="project-image"
+                        onClick={() => handleImageClick([eightEastImage, eightEast1Image, eightEast2Image])}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* 8Con East Project Showcase */}
+                  <div className="experience-project">
+                    <h5 className="project-name">8Con Enrollment System</h5>
+                    <div className="project-details">
+                      <p className="project-description">
+                        <strong>Web Development:</strong> Built functional web pages from design mockups using HTML5 and CSS. Added interactive features and ensured the site worked across different browsers while maintaining visual consistency.
+                      </p>
+                      <p className="project-description">
+                        <strong>UI/UX Design:</strong> Improved the enrollment system interface for better user flow and accessibility. Created clear navigation patterns and conducted user testing to validate design improvements.
+                      </p>
+                      <p className="project-description">
+                        <strong>Digital Marketing:</strong> Managed social media accounts by creating content calendars and posting updates. Designed social media templates and graphics to maintain brand consistency across platforms.
+                      </p>
+                      <div className="project-technologies">
+                        <span className="tech-tag">PHP</span>
+                        <span className="tech-tag">HTML5</span>
+                        <span className="tech-tag">CSS3</span>
+                        <span className="tech-tag">JavaScript</span>
+                        <span className="tech-tag">Figma</span>
+                        <span className="tech-tag">MySQL</span>
+                        <span className="tech-tag">UI/UX Design</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              
+              
+                       </div>
+          </section>
 
           {/* Works Section */}
           <section id="works" className="works-section reveal">
@@ -989,30 +1068,6 @@ return (
               </div>
             </div>
           </div>
-          <div className="works-card2 reveal">
-            <div className="works-image-container2">
-              <img
-                src={eightEastImage}
-                alt="8Con East Project Preview"
-                className="works-image"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[5].images)}
-              />
-              <h4 className="project-title1">8Con - East</h4>
-              <p className="project-subtitle1">
-                8Con Enrollment System
-              </p>
-              <p className="project-description1">
-                {projects[5].description}
-              </p>
-              <div className="project-technologies1">
-                {projects[5].technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-            </div>
-          </div>
         </section>
 
         <section id="works3" className="works_small_card works_centered_row">
@@ -1022,15 +1077,12 @@ return (
                 src={CollabCanvasImage}
                 alt="Collaborative Canvas Project Preview"
                 className="works-image"
-                style={{ objectPosition: 'top' }}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[6].images)}
+                onClick={() => handleImageClick(projects[5].images)}
               />
               <div className="project-links">
-                {projects[6].github ? (
+                {projects[5].link ? (
                   <a 
-                    href={projects[6].github} 
+                    href={projects[5].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1040,9 +1092,9 @@ return (
                 ) : (
                   <h4 className="project-title1">Collaborative Canvas</h4>
                 )}
-                {projects[6].github && (
+                {projects[5].github && (
                   <a 
-                    href={projects[6].github} 
+                    href={projects[5].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1055,10 +1107,11 @@ return (
                 Real-time Drawing Application
               </p>
               <p className="project-description1">
+                {projects[5].description}
                 A web-based collaborative drawing application that allows multiple users to draw and interact with each other in real-time.
               </p>
               <div className="project-technologies1">
-                {projects[6].technologies.map((tech, index) => (
+                {projects[5].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1072,12 +1125,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[7].images)}
+                onClick={() => handleImageClick(projects[6].images)}
               />
               <div className="project-links">
-                {projects[7].github ? (
+                {projects[6].github ? (
                   <a 
-                    href={projects[7].github} 
+                    href={projects[6].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1087,9 +1140,9 @@ return (
                 ) : (
                   <h4 className="project-title1">Fake News Detector</h4>
                 )}
-                {projects[7].github && (
+                {projects[6].github && (
                   <a 
-                    href={projects[7].github} 
+                    href={projects[6].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1105,7 +1158,7 @@ return (
                 A machine learning-based system that uses natural language processing (NLP) to classify news articles as fake or real.
               </p>
               <div className="project-technologies1">
-                {projects[7].technologies.map((tech, index) => (
+                {projects[6].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1122,12 +1175,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[8].images)}
+                onClick={() => handleImageClick(projects[7].images)}
               />
               <div className="project-links">
-                {projects[8].link ? (
+                {projects[7].link ? (
                   <a 
-                    href={projects[8].link} 
+                    href={projects[7].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1137,9 +1190,9 @@ return (
                 ) : (
                   <h4 className="project-title1">New York Times Clone</h4>
                 )}
-                {projects[8].github && (
+                {projects[7].github && (
                   <a 
-                    href={projects[8].github} 
+                    href={projects[7].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1152,10 +1205,10 @@ return (
                 News Website Replica
               </p>
               <p className="project-description1">
-                {projects[8].description}
+                {projects[7].description}
               </p>
               <div className="project-technologies1">
-                {projects[8].technologies.map((tech, index) => (
+                {projects[7].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1169,12 +1222,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[9].images)}
+                onClick={() => handleImageClick(projects[8].images)}
               />
               <div className="project-links">
-                {projects[9].link ? (
+                {projects[8].link ? (
                   <a 
-                    href={projects[9].link} 
+                    href={projects[8].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1184,9 +1237,9 @@ return (
                 ) : (
                   <h4 className="project-title1">Jejemon Translator</h4>
                 )}
-                {projects[9].github && (
+                {projects[8].github && (
                   <a 
-                    href={projects[9].github} 
+                    href={projects[8].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1199,10 +1252,10 @@ return (
                 Text Translation Tool
               </p>
               <p className="project-description1">
-                {projects[9].description}
+                {projects[8].description}
               </p>
               <div className="project-technologies1">
-                {projects[9].technologies.map((tech, index) => (
+                {projects[8].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
