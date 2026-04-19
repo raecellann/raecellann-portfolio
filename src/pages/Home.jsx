@@ -38,8 +38,8 @@ const FakeNewsDetector1Image = "https://res.cloudinary.com/diws5bcu6/image/uploa
 const FakeNewsDetector2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228811/Fake_news-detector2_vq5dio.png";
 import studyingGif from "../assets/studying.gif";
 import chatgptIcon from "../assets/chatgpt-icon.png";
-const newYork1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/new-york1.png";
-const newYork2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/new-york2.png";
+const newYork1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228807/Fake_news-detector_ha16rj.png";
+const newYork2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228811/Fake_news_detector1_oik4lf.png";
 const jejemonImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon_tlsppc.png";
 const jejemon1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon1_exf76r.png";
 const jejemon2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon2_clkmo5.png";
