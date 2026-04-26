@@ -34,12 +34,12 @@ const Immaculearn3 = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228
 const CollabCanvasImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Collab-canvas_pgbbkq.png";
 const CollabCanvas1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Collab-canvas1_skyiu9.png";
 const FakeNewsDetectorImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228807/Fake_news-detector_ha16rj.png";
-const FakeNewsDetector1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/Fake_news-detector1_oik4lf.png";
+const FakeNewsDetector1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228811/Fake_news_detector1_oik4lf.png";
 const FakeNewsDetector2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228811/Fake_news-detector2_vq5dio.png";
 import studyingGif from "../assets/studying.gif";
 import chatgptIcon from "../assets/chatgpt-icon.png";
-const newYork1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228807/Fake_news-detector_ha16rj.png";
-const newYork2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228811/Fake_news_detector1_oik4lf.png";
+const newYork1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1777204680/Screenshot_2026-04-26_195720_d5abyg.png";
+const newYork2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1777204680/Screenshot_2026-04-26_195739_e9swjy.png";
 const jejemonImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon_tlsppc.png";
 const jejemon1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon1_exf76r.png";
 const jejemon2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon2_clkmo5.png";
@@ -913,12 +913,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[1].images)}
+                onClick={() => handleImageClick(projects[2].images)}
               />
               <div className="project-links">
-                {projects[1].link ? (
+                {projects[2].link ? (
                   <a 
-                    href={projects[1].link} 
+                    href={projects[2].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -928,9 +928,9 @@ return (
                 ) : (
                   <h4 className="project-title">Communiqué</h4>
                 )}
-                {projects[1].github && (
+                {projects[2].github && (
                   <a 
-                    href={projects[1].github} 
+                    href={projects[2].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -943,10 +943,10 @@ return (
                 Social Media Website
               </p>
               <p className="project-description">
-                {projects[1].description}
+                {projects[2].description}
               </p>
               <div className="project-technologies">
-                {projects[1].technologies.map((tech, index) => (
+                {projects[2].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -961,12 +961,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[2].images)}
+                onClick={() => handleImageClick(projects[3].images)}
               />
               <div className="project-links">
-                {projects[2].link ? (
+                {projects[3].link ? (
                   <a 
-                    href={projects[2].link} 
+                    href={projects[3].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -976,9 +976,9 @@ return (
                 ) : (
                   <h4 className="project-title">Lucky Mo To</h4>
                 )}
-                {projects[2].github && (
+                {projects[3].github && (
                   <a 
-                    href={projects[2].github} 
+                    href={projects[3].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -991,10 +991,10 @@ return (
                 Minute Lotto Website
               </p>
               <p className="project-description">
-                {projects[2].description}
+                {projects[3].description}
               </p>
               <div className="project-technologies">
-                {projects[2].technologies.map((tech, index) => (
+                {projects[3].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1008,12 +1008,12 @@ return (
                 src={CollabCanvasImage}
                 alt="Collaborative Canvas Project Preview"
                 className="works-image"
-                onClick={() => handleImageClick(projects[4].images)}
+                onClick={() => handleImageClick(projects[5].images)}
               />
               <div className="project-links">
-                {projects[4].link ? (
+                {projects[5].link ? (
                   <a 
-                    href={projects[4].link} 
+                    href={projects[5].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1023,9 +1023,9 @@ return (
                 ) : (
                   <h4 className="project-title1">Collaborative Canvas</h4>
                 )}
-                {projects[4].github && (
+                {projects[5].github && (
                   <a 
-                    href={projects[4].github} 
+                    href={projects[5].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1038,11 +1038,11 @@ return (
                 Real-time Drawing Application
               </p>
               <p className="project-description1">
-                {projects[4].description}
+                {projects[5].description}
                 A web-based collaborative drawing application that allows multiple users to draw and interact with each other in real-time.
               </p>
               <div className="project-technologies1">
-                {projects[4].technologies.map((tech, index) => (
+                {projects[5].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1056,12 +1056,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[5].images)}
+                onClick={() => handleImageClick(projects[6].images)}
               />
               <div className="project-links">
-                {projects[5].github ? (
+                {projects[6].github ? (
                   <a 
-                    href={projects[5].github} 
+                    href={projects[6].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1071,9 +1071,9 @@ return (
                 ) : (
                   <h4 className="project-title1">Fake News Detector</h4>
                 )}
-                {projects[5].github && (
+                {projects[6].github && (
                   <a 
-                    href={projects[5].github} 
+                    href={projects[6].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1089,7 +1089,7 @@ return (
                 A machine learning-based system that uses natural language processing (NLP) to classify news articles as fake or real.
               </p>
               <div className="project-technologies1">
-                {projects[5].technologies.map((tech, index) => (
+                {projects[6].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1106,12 +1106,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[6].images)}
+                onClick={() => handleImageClick(projects[7].images)}
               />
               <div className="project-links">
-                {projects[6].link ? (
+                {projects[7].link ? (
                   <a 
-                    href={projects[6].link} 
+                    href={projects[7].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1121,9 +1121,9 @@ return (
                 ) : (
                   <h4 className="project-title1">New York Times Clone</h4>
                 )}
-                {projects[6].github && (
+                {projects[7].github && (
                   <a 
-                    href={projects[6].github} 
+                    href={projects[7].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1136,10 +1136,10 @@ return (
                 News Website Replica
               </p>
               <p className="project-description1">
-                {projects[6].description}
+                {projects[7].description}
               </p>
               <div className="project-technologies1">
-                {projects[6].technologies.map((tech, index) => (
+                {projects[7].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -1153,12 +1153,12 @@ return (
                 className="works-image"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleImageClick(projects[3].images)}
+                onClick={() => handleImageClick(projects[4].images)}
               />
               <div className="project-links">
-                {projects[3].link ? (
+                {projects[4].link ? (
                   <a 
-                    href={projects[3].link} 
+                    href={projects[4].link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="project-title-link"
@@ -1168,9 +1168,9 @@ return (
                 ) : (
                   <h4 className="project-title1">Infonova</h4>
                 )}
-                {projects[3].github && (
+                {projects[4].github && (
                   <a 
-                    href={projects[3].github} 
+                    href={projects[4].github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="github-link"
@@ -1183,10 +1183,10 @@ return (
                 Search Engine for Articles
               </p>
               <p className="project-description1">
-                {projects[3].description}
+                {projects[4].description}
               </p>
               <div className="project-technologies1">
-                {projects[3].technologies.map((tech, index) => (
+                {projects[4].technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
