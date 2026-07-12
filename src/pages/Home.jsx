@@ -38,6 +38,7 @@ const FakeNewsDetector1Image = "https://res.cloudinary.com/diws5bcu6/image/uploa
 const FakeNewsDetector2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228811/Fake_news-detector2_vq5dio.png";
 import studyingGif from "../assets/studying.gif";
 import chatgptIcon from "../assets/chatgpt-icon.png";
+import resumePdf from "../assets/RAECELL ANN GALVEZ - RESUME.pdf";
 const newYork1Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1777204680/Screenshot_2026-04-26_195720_d5abyg.png";
 const newYork2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1777204680/Screenshot_2026-04-26_195739_e9swjy.png";
 const jejemonImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228808/jejemon_tlsppc.png";
@@ -534,7 +535,7 @@ return (
           <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); }}>About Me</a>
           <a href="#experience" onClick={(e) => { e.preventDefault(); smoothScrollTo('experience'); }}>Experience</a>
           <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); }}>Projects</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href={resumePdf} target="_blank" rel="noopener noreferrer">Resume</a>
           <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }}>Contact</a>
         </nav>
         <div className="navbar-right">
@@ -558,7 +559,7 @@ return (
           <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); setMenuOpen(false); }}>About Me</a>
           <a href="#experience" onClick={(e) => { e.preventDefault(); smoothScrollTo('experience'); setMenuOpen(false); }}>Experience</a>
           <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); setMenuOpen(false); }}>Projects</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Resume</a>
+          <a href={resumePdf} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Resume</a>
           <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); setMenuOpen(false); }}>Contact</a>
         </nav>
       </div>
@@ -658,9 +659,13 @@ return (
                   <i className="fab fa-react skill-icon"></i>
                   <span>ReactJS</span>
                 </div>
+                <div className="skill-item">
+                  <i className="fab fa-shopify skill-icon"></i>
+                  <span>Liquid (Shopify)</span>
+                </div>
               </div>
               <p className="category-description">
-                Building responsive and interactive user interfaces with modern web technologies
+                Building responsive and interactive user interfaces with modern web technologies, including Shopify frontend development and product listing
               </p>
             </div>
 
@@ -748,10 +753,7 @@ return (
         </section>
         <div className="description-container reveal">
             <p className="skills-description">
-              I'm a Computer Science graduate passionate about building clean, user-friendly digital experiences. I specialize in front-end development and UI/UX design, turning ideas into functional and visually engaging web applications using modern tools like React, JavaScript, and Figma.
-            </p>
-            <p className="skills-description">
-              I enjoy combining creativity with problem-solving—whether it's developing responsive websites, designing intuitive interfaces, or using data and AI tools to improve efficiency. I'm always exploring new technologies and continuously refining my skills to create meaningful and impactful digital solutions.
+              I'm a Computer Science graduate and Front-End Web Developer passionate about creating responsive, user-friendly websites and digital experiences. I specialize in <strong>React, JavaScript, HTML, CSS, Tailwind CSS, and Shopify Liquid</strong>, building modern web applications and e-commerce storefronts that combine clean design with strong functionality. I enjoy solving real-world problems through thoughtful UI/UX, performance optimization, and continuous learning to deliver meaningful digital solutions.
             </p>
           </div>
 
@@ -761,6 +763,40 @@ return (
             <div className="experience-divider"></div>
             
             <div className="experience-timeline">
+
+              {/* Shopify Front-End Developer */}
+              <div className="experience-item">
+                <div className="experience-content">
+                  <div className="experience-header">
+                    <div className="experience-title-section">
+                      <h4 className="experience-position">Shopify Front-End Web Developer</h4>
+                      <div className="experience-company-date">
+                        <h5 className="experience-company">Freelance</h5>
+                        <h6 className="experience-date">May 2026 - Present</h6>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Shopify Project Showcase */}
+                  <div className="experience-project">
+                    <h5 className="project-name">Shopify E-Commerce Development</h5>
+                    <div className="project-details">
+                      <p className="project-description">
+                        <strong>Shopify Theme Development:</strong> As a Shopify Front-End Web Developer, I specialize in building responsive, high-performing e-commerce storefronts that deliver seamless user experiences. I customize Shopify themes using Liquid, HTML, CSS, and JavaScript, optimize website performance and SEO, and create modern, user-friendly interfaces tailored to business needs.
+                      </p>
+                      <div className="project-technologies">
+                        <span className="tech-tag">Liquid</span>
+                        <span className="tech-tag">Shopify</span>
+                        <span className="tech-tag">HTML5</span>
+                        <span className="tech-tag">CSS3</span>
+                        <span className="tech-tag">JavaScript</span>
+                        <span className="tech-tag">E-commerce</span>
+                        <span className="tech-tag">SEO Optimization</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="experience-item">
                 <div className="experience-content">
                   <div className="experience-header">

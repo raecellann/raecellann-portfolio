@@ -3,32 +3,30 @@
 body {
   margin: 0;
   transition: background 0.4s ease, color 0.4s ease;
-  background-color: #000000;
   color: #ffffff;
-  background-image: 
-    radial-gradient(#4b0084 2px, transparent 2px), 
-    radial-gradient(#4b0084 2px, #000000 2px);
-  background-size: 80px 80px;
-  background-position: 0 0, 40px 40px;
-  background-attachment: fixed;
+  background-color: #000000;
   scroll-behavior: smooth;
 }
 
 /* Dark and Light mode */
 .home-container.dark {
-  background-color: rgba(11, 10, 10, 0.3);
+  background-color: #000000;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.12) 0.4px, transparent 0.4px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.12) 0.4px, transparent 0.4px);
+  background-size: 3px 3px;
+  background-position: 0 0, 1.5px 1.5px;
   color: #fffdfd;
 }
 
 .home-container.light {
-  background-color: #ffffff;
+  background-color: #FFFBF3;
+  background-image:
+    radial-gradient(circle, rgba(0, 0, 0, 0.12) 0.35px, transparent 0.35px),
+    radial-gradient(circle, rgba(0, 0, 0, 0.12) 0.35px, transparent 0.35px);
+  background-size: 3px 3px;
+  background-position: 0 0, 1.5px 1.5px;
   color: #030202;
-  background-image: 
-    radial-gradient(#e8d5f2 2px, transparent 2px), 
-    radial-gradient(#e8d5f2 2px, #ffffff 2px);
-  background-size: 80px 80px;
-  background-position: 0 0, 40px 40px;
-  background-attachment: fixed;
 }
 
 .intro {
@@ -521,7 +519,7 @@ body {
   opacity: 0.9;
   width: 100%; /* takes full width of its parent */
   max-width: none; /* removes restriction */
-  text-align: left; /* aligns with the tags */
+  text-align: justify; /* use justified alignment */
 }
 
 .description-container {
@@ -598,7 +596,6 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
 .works-image-container {
   display: flex;
   flex-direction: column;
@@ -666,6 +663,7 @@ body {
   color: inherit;
   margin: 8px 0;
   line-height: 1.4;
+  text-align: justify;
 }
 
 .project-technologies {
@@ -1194,6 +1192,24 @@ body {
   opacity: 1;
 }
 
+.light .mobile-menu {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .mobile-nav a {
+  color: #2d3748;
+}
+
+.light .mobile-nav a:hover {
+  color: #9c27b0;
+}
+
+.light .mobile-menu {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .mobile-menu:not(.active) {
   opacity: 0;
 }
@@ -1289,12 +1305,14 @@ body {
   transition: width 0.3s ease;
 }
 
-.mobile-nav a:hover {
+.mobile-nav a:hover,
+.mobile-nav a:active {
   color: #9c27b0;
   transform: translateY(-2px);
 }
 
-.mobile-nav a:hover::after {
+.mobile-nav a:hover::after,
+.mobile-nav a:active::after {
   width: 100%;
 }
 
@@ -1492,10 +1510,12 @@ body {
 @media (max-width: 480px) {
   /* Fix mobile light mode background */
   .home-container.light {
-    background-color: #ffffff !important;
-    background-image: 
-      radial-gradient(#e8d5f2 2px, transparent 2px), 
-      radial-gradient(#e8d5f2 2px, #ffffff 2px) !important;
+    background-color: #FFFBF3 !important;
+    background-image: none !important;
+  }
+
+  .footer {
+    margin-top: auto;
   }
 
   /* Ensure soft-skills section is visible */
@@ -2551,6 +2571,10 @@ body {
   .contact-section {
     order: 1;
   }
+
+  .footer {
+    order: 2;
+  }
   
   main {
     display: flex;
@@ -2605,10 +2629,6 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: #667eea;
-  background: rgba(102, 126, 234, 0.1);
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-align: center;
   height: fit-content;
 }
 
@@ -2669,7 +2689,6 @@ body {
 
 .light .experience-date {
   color: #4a5568;
-  background: rgba(74, 85, 104, 0.1);
 }
 
 .light .experience-position {
@@ -2747,6 +2766,23 @@ body {
 
 .experience-title-section {
   flex: 1;
+}
+
+.experience-company-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.experience-company-date .experience-company {
+  margin-bottom: 0;
+}
+
+.experience-company-date .experience-date {
+  font-size: 0.9rem;
+  color: #b8b8b8;
+  font-weight: 500;
 }
 
 .experience-header .project-image-container {
