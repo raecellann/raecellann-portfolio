@@ -11,6 +11,7 @@ import galvezLightSvg from "../assets/GALVEZ-lightmode.svg";
 import raecellLightSvg from "../assets/RAECELL-ANN-lightmode.svg";
 import raecelldarkSvg from "../assets/RAECELL-ANN-darkmode.svg";
 import profilePic from "../assets/picture.png"; // adjust path if needed
+import resumePdf from "../assets/RAECELL ANN GALVEZ - RESUME.pdf";
 const minicellImage = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228809/Minicell_y05aip.png";
 const minicell2Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Minicell2_ovpfyn.png";
 const minicell3Image = "https://res.cloudinary.com/diws5bcu6/image/upload/v1776228810/Minicell3_m7mzs5.png";
@@ -534,7 +535,7 @@ return (
           <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); }}>About Me</a>
           <a href="#experience" onClick={(e) => { e.preventDefault(); smoothScrollTo('experience'); }}>Experience</a>
           <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); }}>Projects</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href={resumePdf} target="_blank" rel="noopener noreferrer">Resume</a>
           <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }}>Contact</a>
         </nav>
         <div className="navbar-right">
@@ -558,7 +559,7 @@ return (
           <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); setMenuOpen(false); }}>About Me</a>
           <a href="#experience" onClick={(e) => { e.preventDefault(); smoothScrollTo('experience'); setMenuOpen(false); }}>Experience</a>
           <a href="#works" onClick={(e) => { e.preventDefault(); smoothScrollTo('works'); setMenuOpen(false); }}>Projects</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Resume</a>
+          <a href={resumePdf} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Resume</a>
           <a href="#contact" onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); setMenuOpen(false); }}>Contact</a>
         </nav>
       </div>
