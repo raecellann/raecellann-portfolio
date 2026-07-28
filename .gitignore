@@ -4,8 +4,8 @@
 *.pdf
 !src/assets/resume.pdf
 !src/assets/raecellann-galvez-resume.pdf
+!src/assets/RAECELL ANN GALVEZ - RESUME.pdf
 !public/resume.pdf
-RAECELL ANN GALVEZ - RESUME.pdf
 src/resume/
 
 # EmailJS credentials - exclude from GitHub for security

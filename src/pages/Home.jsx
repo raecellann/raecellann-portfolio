@@ -66,7 +66,7 @@ const projects = [
     description: "An educational platform enabling real-time collaboration between students and teachers with interactive features.",
     technologies: ["ReactJS", "Supabase", "MySQL", "Socket.io", "Figma", "Vite"],
     images: [ImmaculearnImage, Immaculearn1, Immaculearn2, Immaculearn3],
-    link: "https://www.figma.com/proto/zdDOXdyNRIojXS5bAb725s/Team-ImmacuLearn?node-id=0-1&t=vhIYtNIuboAWF2Cf-1",
+    link: "https://immaculearn.online/",
     github: "https://github.com/raecellann/Immaculearn.git"
   },
   {
@@ -848,7 +848,6 @@ return (
                   <div className="experience-header">
                     <div className="experience-title-section">
                       <h4 className="experience-position">Immaculearn - Thesis Project (Collaborative Learning Web Application)</h4>
-                      <h5 className="experience-company">React, Node.js, MySQL</h5>
                     </div>
                     <div className="project-image-container">
                       <img 
@@ -862,7 +861,9 @@ return (
                   
                   {/* Immaculearn Project Showcase */}
                   <div className="experience-project">
-                    <h5 className="project-name">Immaculearn</h5>
+                    <p className="project-link">
+                      <strong>Website URL:</strong> <a href="https://immaculearn.online/" target="_blank" rel="noopener noreferrer">https://immaculearn.online/</a>
+                    </p>
                     <div className="project-details">
                       <p className="project-description">
                         <strong>Project Leadership:</strong> Led front-end development and UI/UX design for a collaborative learning platform supporting real-time communication, task management, and file sharing for students and instructors.
